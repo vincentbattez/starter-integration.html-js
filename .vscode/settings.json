@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "package-lock.json": true,
+    "README.md": true,
+    "yarn.lock": true,
+    ".vscode": true,
+    "node_modules": true,
+    "dist": true,
+    
+    "webpack.*.js": true,
+    ".babelrc": true,
+    ".gitignore": true,
+    "package.json": true
+  }
+}

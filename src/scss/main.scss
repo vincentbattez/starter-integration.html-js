@@ -1,0 +1,35 @@
+/** Import variables & minxins */
+@import "helpers/variables";
+@import "helpers/mixins";
+
+/** Import les librairies */
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
+@import "~normalize.css";
+
+/** Import Google Font */
+
+
+//Common
+@import "common/global";
+@import "common/typography";
+
+//Helpers
+@import "helpers/classes";
+
+//Components
+@import "components/buttons";
+
+//Layouts
+@import "layouts/header";
+@import "layouts/navbar";
+@import "layouts/footer";
+
+//Pages
+@import "pages/homepage";

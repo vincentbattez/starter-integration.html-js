@@ -1,0 +1,34 @@
+// Code uniquement pour les écrans d'ordinateur
+@mixin desktop() {
+  @media screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// Code pour les écrans de tablette et moins
+@mixin tablet() {
+  @media screen and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// Code uniquement pour les écrans mobile
+@mixin mobile() {
+  @media screen and (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+// Code uniquement pour les écrans en format paysage
+@mixin landscape() {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+// Code uniquement pour l'impression
+@mixin print() {
+  @media print {
+    @content;
+  }
+}
