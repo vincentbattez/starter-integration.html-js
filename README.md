@@ -1,4 +1,4 @@
-# Africtrad
+# Intégration HTML CSS JS
 
 ## Getting start
 ```
@@ -21,10 +21,20 @@ CODE !
 1) Ajoute ton fichier SCSS
 2) Import ton fichier SCSS dans main.scss
 
-# Techno :
+# Technos :
 - HTML
-- CSS (foundation)
+- CSS
+  - normalize.css
 - SCSS
 - JS (jquery)
 - Webpack
+  - babel
+  - browser sync
+  - clean
+  - extract text
+  - sass
+  - postcss
+    - autoprefixer
+    - minify
+  - purify
 - ES6
