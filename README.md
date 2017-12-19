@@ -1,4 +1,4 @@
-# Intégration HTML CSS JS
+# Intégration HTML / CSS / JS
 
 ## Getting start
 ```
@@ -24,17 +24,20 @@ CODE !
 # Technos :
 - HTML
 - CSS
-  - normalize.css
+  - Normalize.css 7.0.0
 - SCSS
-- JS (jquery)
+- JS
+  - Jquery 3.2.1
 - Webpack
-  - babel
-  - browser sync
-  - clean
-  - extract text
-  - sass
-  - postcss
-    - autoprefixer
-    - minify
-  - purify
-- ES6
+  - [both] Babel (ES6)
+  - [dev]  Brower sync (livereload)
+  - [dev]  Clean (supprime le dossier ./dist)
+  - [dev]  Sourcemap (chemin des fichiers d'origines
+  - SCSS
+    - [both] Extract text
+  - Postcss
+    - [both] Autoprefixer (rajoute les prefix pour la compatiblité navigateur (voir browserslist dans package.json) )
+    - [both] css-mqpacker (concat les medias query) 
+  - Purify
+    - [prod] Purify (remove les class useless)
+    - [prod] Uglify (minifie)

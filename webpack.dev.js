@@ -29,7 +29,7 @@ module.exports = merge(common, {
                             ident: 'postcss',
                             plugins: (loader) => [
                               require('autoprefixer')(),
-                              require('cssnano')()
+                              require('css-mqpacker')(), // concat les médias
                             ],
                             sourceMap: true,
                         } 

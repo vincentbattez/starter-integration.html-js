@@ -1,20 +1,10 @@
-@include mobile {
-  .container {
-    .content {
-      width   : auto;
-      padding : 0 $gap-global-small;
-    }
-  }
-}
-
 body,
 html {
   height : 100%;
-}
-
-body {
   width : 100%;
 }
+
+body {}
 
 * {
   box-sizing : border-box;
@@ -51,6 +41,15 @@ main {
       display     : inline-block;
       position    : relative;
       margin-left : 30px;
+    }
+  }
+}
+
+@include media('mobile') {
+  .container {
+    .content {
+      padding   : 0 $gap-global-mobile;
+      max-width : none;
     }
   }
 }

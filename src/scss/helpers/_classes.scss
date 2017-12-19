@@ -1,32 +1,38 @@
-@include desktop {
-  .hide_desktop {
-    display : none !important;
+
+.hide{
+  display: none !important;
+  @each $media in $list-medias{
+    @include media($media){
+      &_#{$media} {
+        display : none !important;
+      }
+    }
   }
 }
-
-@include tablet {
-  .hide_tablet {
-    display : none !important;
-  }
-
-  .full.container > .content {
-    margin-left : -$gap-global-small;
-  }
-}
-
-@include mobile {
-  .hide_mobile {
-    display : none !important;
-  }
-}
-
-.hide {
-  display : none;
-}
-
+// .hide_large-desktop
+// .hide_desktop
+// .hide_tablet
+// .hide_only-tablet
+// .hide_mobile
+// .hide_landscape
+// .hide_print
 .invisible {
   opacity : 0;
+  @each $media in $list-medias{
+    @include media($media){
+      &_#{$media} {
+        opacity : 0;
+      }
+    }
+  }
 }
+// .invisible_large-desktop
+// .invisible_desktop
+// .invisible_tablet
+// .invisible_only-tablet
+// .invisible_mobile
+// .invisible_landscape
+// .invisible_print
 
 .full {
   &.container {
@@ -35,5 +41,11 @@
     >.content {
       margin-left : -$gap-global;
     }
+  }
+}
+
+@include media('tablet') {
+  .full.container > .content {
+    margin-left : -$gap-global-mobile;
   }
 }
