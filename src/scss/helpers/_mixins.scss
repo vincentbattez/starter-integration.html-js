@@ -88,13 +88,13 @@
 }
 /* @USAGE 
   .class1 {
-    @include center-absolute(x);
+    @include center-absolute('x');
   }
   .class2 {
-    @include center-absolute(y);
+    @include center-absolute('y');
   }
   .class3 {
-    @include center-absolute(xy);
+    @include center-absolute('xy');
   }
 */
 
@@ -125,13 +125,13 @@
 }
 /* @USAGE 
   .class1 {
-    @include center-flex(x);
+    @include center-flex('x');
   }
   .class2 {
-    @include center-flex(y);
+    @include center-flex('y');
   }
   .class3 {
-    @include center-flex(xy);
+    @include center-flex('xy');
   }
 */
 
