@@ -10,5 +10,8 @@
     ".babelrc": true,
     ".gitignore": true,
     "package*.json": true
-  }
+  },
+    "eslint.options": {
+        "configFile": "./.eslintrc.json"
+    },
 }

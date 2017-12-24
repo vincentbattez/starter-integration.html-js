@@ -1,4 +1,4 @@
-# Intégration HTML / CSS / JS
+# Intégration HTML / SCSS / JS avec Webpack
 
 ## Getting start
 ```
@@ -29,15 +29,22 @@ CODE !
 - JS
   - Jquery 3.2.1
 - Webpack
-  - [both] Babel (ES6)
-  - [dev]  Brower sync (livereload)
-  - [dev]  Clean (supprime le dossier ./dist)
-  - [dev]  Sourcemap (chemin des fichiers d'origines
+  - **[dev]**  Brower sync (livereload)
+  - **[dev]**  Clean (supprime le dossier ./dist)
+  - **[dev]**  Sourcemap (chemin des fichiers d'origines)
+  - **[both]** Babel (ES6)
   - SCSS
-    - [both] Extract text
+    - **[both]** Extract text
   - Postcss
-    - [both] Autoprefixer (rajoute les prefix pour la compatiblité navigateur (voir browserslist dans package.json) )
-    - [both] css-mqpacker (concat les medias query) 
+    - **[both]** Autoprefixer (rajoute les prefix pour la compatiblité navigateur (voir browserslist dans package.json) )
+    - **[both]** css-mqpacker (concat les medias query) 
   - Purify
-    - [prod] Purify (remove les class useless)
-    - [prod] Uglify (minifie)
+    - **[prod]** Purify (remove les class useless)
+    - **[prod]** Uglify (minifie)
+  - **[prod]** Eslint
+
+
+
+# TODO :
+- [ ] Minification d'image (+ redirection dans le dossier de destination) 
+- [ ] Moteur de template

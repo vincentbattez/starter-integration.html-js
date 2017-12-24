@@ -1,18 +1,16 @@
-const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-// on peut passer à notre commande de build l'option --production
-// on récupère sa valeur ici en tant que booléen
+const config = require("./compile.config");
 
 module.exports = {
     entry: [
-        'babel-polyfill', // ES6
-        path.resolve(__dirname, "src/js/app.js"), // main JS
-        path.resolve(__dirname, "src/scss/main.scss") // main CSS
+        'babel-polyfill',    // ES6
+        config.srcMain_JS,   // main JS
+        config.srcMain_SCSS  // main CSS
     ],
     output: {
-        path: path.resolve(__dirname, "dist"), // destination : /dist/
-        filename: "bundle.js" // JS bundle
+        path: config.distPath,      // destination : /dist/
+        filename: config.bundle_JS  // JS bundle
     },
     externals: {
         jquery: 'jQuery'
@@ -28,7 +26,7 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({ // Extrait le CSS du JS dans un fichier CSS externe
-            filename: 'bundle.css',
+            filename: config.bundle_CSS,
             allChunks: true
         }),
     ],

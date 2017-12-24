@@ -4,6 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
+const config = require("./compile.config");
 
 module.exports = merge(common, {
     devtool: 'source-map', // Active les source-map
@@ -42,7 +43,7 @@ module.exports = merge(common, {
                     },
                 ],
             })
-        }
+        },
     ]
     },
     plugins: [
@@ -54,6 +55,6 @@ module.exports = merge(common, {
                 baseDir: ['./']
             }
         }),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin([config.distPath])
     ],
 });
