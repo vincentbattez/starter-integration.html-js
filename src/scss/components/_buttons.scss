@@ -1,1 +1,7 @@
-.btn {}
+.btn {
+  @each $name-color, $ color in $list-etat {
+    .#{$name-color} {
+      
+    }
+  }
+}

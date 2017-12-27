@@ -33,7 +33,13 @@
 // .invisible_mobile
 // .invisible_landscape
 // .invisible_print
-
+@each $name-color, $ color in $list-etat {
+  .#{$name-color} { background-color: $ color; }
+}
+// .error
+// .warning
+// .valid
+// .info
 .full {
   &.container {
     max-width : none;
