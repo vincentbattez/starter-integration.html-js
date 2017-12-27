@@ -51,9 +51,8 @@ module.exports = merge(common, {
             // browse to http://localhost:3000/ during development, 
             host: 'localhost',
             port: 3000,
-            server: {
-                baseDir: ['./']
-            }
+            proxy: 'http://localhost:8888/starter-integration/', // YOUR PROXY (le localhost de wamp) NE PAS PUSH
+            files: ['*.php', '**/*.twig']
         }),
         new CleanWebpackPlugin([config.distPath])
     ],

@@ -22,8 +22,8 @@ CODE !
 2) Import ton fichier SCSS dans main.scss
 
 # Technos :
-- HTML **(Twig)**
-- CSS **(SCSS)**
+- HTML **[(Twig)](https://twig.symfony.com/doc/2.x/)**
+- CSS **[(SCSS)](http://sass-lang.com/guide)**
   - Normalize.css 7.0.0
 - JS
   - Jquery 3.2.1
@@ -43,9 +43,13 @@ CODE !
   - **[prod]** Eslint
 
 
+# Documentation :
+- Twig : [https://twig.symfony.com/doc/2.x/](https://twig.symfony.com/doc/2.x/)
+- SCSS : [http://sass-lang.com/guide](http://sass-lang.com/guide)
+
 
 # TODO :
+- [x] Moteur de template twig
+- [x] Twig webpack livereload with php
 - [ ] Minification d'image (+ redirection dans le dossier de destination) 
-- [x] Moteur de template
-- [ ] twig webpack livereload
 - [ ] tuto add twig file
