@@ -7,8 +7,13 @@
     "dist": true,
     
     "webpack.*.js": true,
+    "composer.*": true,
+    "compile.config": true,
+    ".eslintrc.json": true,
+    "vendor": true,
     ".babelrc": true,
     ".gitignore": true,
+    "init.php": true,
     "package*.json": true
   },
     "eslint.options": {

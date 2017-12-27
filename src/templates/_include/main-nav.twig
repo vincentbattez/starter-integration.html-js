@@ -1,0 +1,16 @@
+{% set mainNav = [
+  {title: 'Homepage', url: './homepage.php'},
+  {title: 'Contact', url: './contact.php'}
+] %}
+
+<nav class="main-nav container" role="navigation">
+  <div class="content">
+    <ul class="list">
+      {% for item in mainNav %}
+        <li class="item{% if currentPage.navActive == item.title %} active{% endif %}" role="menuitem">
+          <a href="{{item.url}}">{{item.title}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

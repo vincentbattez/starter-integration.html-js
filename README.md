@@ -22,10 +22,9 @@ CODE !
 2) Import ton fichier SCSS dans main.scss
 
 # Technos :
-- HTML
-- CSS
+- HTML **(Twig)**
+- CSS **(SCSS)**
   - Normalize.css 7.0.0
-- SCSS
 - JS
   - Jquery 3.2.1
 - Webpack
@@ -47,4 +46,6 @@ CODE !
 
 # TODO :
 - [ ] Minification d'image (+ redirection dans le dossier de destination) 
-- [ ] Moteur de template
+- [x] Moteur de template
+- [ ] twig webpack livereload
+- [ ] tuto add twig file
