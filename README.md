@@ -49,7 +49,9 @@ CODE !
 
 
 # TODO :
-- [x] Moteur de template twig
-- [x] Twig webpack livereload with php
-- [ ] Minification d'image (+ redirection dans le dossier de destination) 
-- [ ] tuto add twig file
+- Twig 
+  - [x] Moteur de template twig
+  - [x] Twig webpack livereload with php
+  - [ ] tuto add twig file
+- Starter
+  - [ ] Minification d'image (+ redirection dans le dossier de destination) 
