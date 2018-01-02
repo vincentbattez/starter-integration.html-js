@@ -46,6 +46,8 @@ CODE !
 
 
 # TODO :
+- Jade
+  - [ ] tuto add jade file
 - Starter
   - [X] Moteur de template TWIG (twig branch)
   - [X] Moteur de template JADE (jade) branch)

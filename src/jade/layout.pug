@@ -1,0 +1,28 @@
+include config
+block vars
+
+html(lang='fr')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name='description', content=documentDesc)
+    title #{documentTitle}
+    block CSS
+      link(rel='stylesheet', href=pathCss)
+
+  body(class=bodyClass)
+    include _includes/nav
+    include _includes/header
+
+
+    //- Content
+    main(role="main")
+      block main
+
+
+    include _includes/footer    
+    //- Scripts
+    script(src='../node_modules/jquery/dist/jquery.min.js')
+    script(src=pathJs)
+    block JS
