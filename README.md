@@ -46,5 +46,8 @@ CODE !
 
 
 # TODO :
-- [ ] Minification d'image (+ redirection dans le dossier de destination) 
-- [ ] Moteur de template
+- Starter
+  - [X] Moteur de template TWIG (twig branch)
+  - [X] Moteur de template JADE (jade) branch)
+  - [ ] Minification d'image (+ redirection dans le dossier de destination)
+  - [ ] SVG compilator plugin

@@ -9,7 +9,9 @@
     "webpack.*.js": true,
     ".babelrc": true,
     ".gitignore": true,
-    "package*.json": true
+    "package*.json": true,
+    ".eslintrc.json": true,
+    "compile.config": true
   },
     "eslint.options": {
         "configFile": "./.eslintrc.json"
