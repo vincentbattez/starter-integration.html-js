@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    "README.md": true,
+    // "README.md": true,
     "yarn.lock": true,
     ".vscode": true,
     "node_modules": true,
@@ -13,6 +13,9 @@
     "vendor": true,
     ".babelrc": true,
     ".gitignore": true,
+    "package*.json": true,
+    ".eslintrc.json": true,
+    "compile.config": true
     "init.php": true,
     "package*.json": true
   },

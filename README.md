@@ -49,9 +49,12 @@ CODE !
 
 
 # TODO :
+- Starter
+  - [X] Moteur de template TWIG (twig branch)
+  - [X] Moteur de template JADE (pug branch)
+  - [ ] Minification d'image (+ redirection dans le dossier de destination)
+  - [ ] SVG compilator plugin
+  - [x] Twig webpack livereload with php
 - Twig 
   - [x] Moteur de template twig
-  - [x] Twig webpack livereload with php
   - [ ] tuto add twig file
-- Starter
-  - [ ] Minification d'image (+ redirection dans le dossier de destination) 
