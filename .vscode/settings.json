@@ -15,9 +15,9 @@
     ".gitignore": true,
     "package*.json": true,
     ".eslintrc.json": true,
-    "compile.config": true
+    "compile.config": true,
     "init.php": true,
-    "package*.json": true
+    "package*.json": true,
   },
     "eslint.options": {
         "configFile": "./.eslintrc.json"
