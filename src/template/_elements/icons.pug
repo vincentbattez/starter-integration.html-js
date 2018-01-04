@@ -1,0 +1,10 @@
+mixin icon(icon_name)
+  - moreClass = attributes.class ? " "+attributes.class : ""
+  span(class="icon-sprite-vivescia icon-" + icon_name + moreClass)
+//--- @use -//
+  +icon("home", "boutton d'accueil")(class="btn")
+
+//- @return -//
+ <span class="icon-sprite-vivescia icon-home btn">
+   <span class="sr-only">(boutton d'accueil)</span>
+ </span>

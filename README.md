@@ -33,6 +33,7 @@ CODE !
   - **[dev]**  Clean (supprime le dossier ./dist)
   - **[dev]**  Sourcemap (chemin des fichiers d'origines)
   - **[both]** Babel (ES6)
+  - **[both]** file-loader (redirection dans le dist)
   - SCSS
     - **[both]** Extract text
   - Postcss
@@ -42,14 +43,15 @@ CODE !
     - **[prod]** Purify (remove les class useless)
     - **[prod]** Uglify (minifie)
   - **[prod]** Eslint
+  - **[prod]** image-webpack-loader (Optimisation des images)
 
 
 
 # TODO :
-- Jade
-  - [ ] tuto add jade file
+- pug
+  - [ ] tuto add pug file
 - Starter
   - [X] Moteur de template TWIG (twig branch)
-  - [X] Moteur de template JADE (jade) branch)
-  - [ ] Minification d'image (+ redirection dans le dossier de destination)
+  - [X] Moteur de template PUG (pug branch)
+  - [X] Optimisation des images (+ redirection dans le dossier de destination)
   - [ ] SVG compilator plugin

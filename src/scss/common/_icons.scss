@@ -1,0 +1,14 @@
+.icon-sprite-MONSITE {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-image: url($pathIMG + 'svg/add-black.svg');
+  background-repeat: no-repeat;
+  &.icon- {
+    /*
+      Navigation
+    */
+    &user {
+    }
+  }
+}

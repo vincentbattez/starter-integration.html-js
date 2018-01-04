@@ -1,5 +1,6 @@
 include config
 block vars
+include mixins
 
 html(lang='fr')
   head
@@ -8,12 +9,13 @@ html(lang='fr')
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     meta(name='description', content=documentDesc)
     title #{documentTitle}
+
+    link(rel='stylesheet', href=pathCss)
     block CSS
-      link(rel='stylesheet', href=pathCss)
 
   body(class=bodyClass)
-    include _includes/nav
-    include _includes/header
+    include _layout/navbars
+    include _layout/header
 
 
     //- Content
@@ -21,7 +23,7 @@ html(lang='fr')
       block main
 
 
-    include _includes/footer    
+    include _layout/footer    
     //- Scripts
     script(src='../node_modules/jquery/dist/jquery.min.js')
     script(src=pathJs)

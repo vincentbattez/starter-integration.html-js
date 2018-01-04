@@ -1,0 +1,25 @@
+-
+  data_mainNav = [
+    {
+      name: "Accueil",
+      url: "./homepage.html",
+      navActive: "homepage" // doit match avec bodyClass dans les pages
+    },
+    {
+      name: "Contact",
+      url: "./contact.html",
+      navActive: "contact" // doit match avec bodyClass dans les pages
+    },
+  ];
+
+block main-nav
+nav.main-nav.container.icon-sprite-MONSITE(role="navigation")
+  div.content
+    ul.list
+      each link in data_mainNav
+        if link.navActive == bodyClass 
+          - active = ' active'
+        else
+          - active = ''
+        li.item(role="menuitem")
+          a(class='nav-link' + active, href=link.url) #{link.name}

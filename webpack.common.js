@@ -23,6 +23,18 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader : 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img/',
+            },
+          },
+        ],
       }
     ]
   },
@@ -33,7 +45,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: '!!pug-loader!' + config.srcPath_HTML + '/homepage.pug',  
+      template: config.srcPath_HTML + '/homepage.pug',  
       filename: config.distPath+'/homepage.html'
     })
   ],

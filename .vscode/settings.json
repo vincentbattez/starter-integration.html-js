@@ -1,16 +1,16 @@
 {
   "files.exclude": {
-    "README.md": true,
+    // "README.md": true,
     "yarn.lock": true,
     ".vscode": true,
     "node_modules": true,
-    "dist": true,
+    // "dist": true,
     
     "webpack.dev.js": true,
-    "webpack.prod.js": true,
+    // "webpack.prod.js": true,
     ".babelrc": true,
     ".gitignore": true,
-    "package*.json": true,
+    "package-lock.json": true,
     ".eslintrc.json": true,
     "compile.config": true
   },

@@ -44,6 +44,17 @@ module.exports = merge(common, {
                 ],
             })
         },
+        {
+          test: /\.pug$/,
+          use: [
+            {
+              loader: 'pug-loader',
+              options: {
+                pretty: true
+              },
+            }
+          ]
+        },
     ]
     },
     plugins: [

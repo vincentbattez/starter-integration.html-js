@@ -50,6 +50,44 @@ module.exports = merge(common,{
               exclude: /node_modules/,
               loader: "babel-loader",
             },
+            {
+              test: /\.(gif|png|jpe?g|svg)$/i,
+              use: [
+                {
+                  loader: 'image-webpack-loader',
+                  options: {
+                    options: {
+                      mozjpeg: {
+                        progressive: true,
+                        quality: 65
+                      },
+                      // optipng.enabled: false will disable optipng
+                      optipng: {
+                        enabled: true,
+                      },
+                      pngquant: {
+                        quality: '65-90',
+                        speed: 4
+                      },
+                      gifsicle: {
+                        interlaced: false,
+                      },
+                    }
+                  },
+                },
+              ],
+            },
+            {
+              test: /\.pug$/,
+              use: [
+                {
+                  loader: 'pug-loader',
+                  options: {
+                    pretty: false
+                  },
+                }
+              ]
+            },
         ]
     },
     plugins: [
