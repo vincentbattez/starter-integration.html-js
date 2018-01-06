@@ -16,12 +16,25 @@ module.exports = {
     jquery: 'jQuery'
   },
   module: {
-    // BABEL
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }, ],
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader : 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img/',
+            },
+          },
+        ],
+      }
+    ]
   },
   plugins: [
     new ExtractTextPlugin({ // Extrait le CSS du JS dans un fichier CSS externe
