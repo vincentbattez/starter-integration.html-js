@@ -43,14 +43,13 @@ module.exports = merge(common, {
     }, ]
   },
   plugins: [
-    new BrowserSyncPlugin({
-      // browse to http://localhost:3000/ during development, 
-      host: 'localhost',
-      port: 3000,
-      server: {
-        baseDir: ['./']
-      }
-    }),
+    new BrowserSyncPlugin({ 
+        // browse to http://localhost:8888/ during development,  
+        host: 'localhost', 
+        port: 3000, 
+        proxy: 'http://localhost:8888/starter-integration/', // YOUR PROXY (le localhost de wamp) NE PAS PUSH 
+        files: ['*.php', '**/*.twig'] 
+    }), 
     new CleanWebpackPlugin([config.distPath])
   ],
 });
