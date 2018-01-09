@@ -28,19 +28,20 @@ CODE !
 - JS
   - Jquery 3.2.1
 - Webpack
-  - **[dev]**  Brower sync (livereload)
-  - **[dev]**  Clean (supprime le dossier ./dist)
-  - **[dev]**  Sourcemap (chemin des fichiers d'origines)
-  - **[both]** Babel (ES6)
+  - **[dev]**  [Brower sync](https://github.com/Va1/browser-sync-webpack-plugin) (livereload)
+  - **[dev]**  [Clean](https://github.com/johnagan/clean-webpack-plugin) (supprime le dossier ./dist)
+  - **[dev]**  [Sourcemap](https://webpack.js.org/configuration/devtool/) (chemin des fichiers d'origines)
+  - **[both]** [babel-loader](https://github.com/babel/babel-loader) (ES6)
+  - **[both]** [file-loader](https://github.com/webpack-contrib/file-loader) (redirection dans le dist)
   - SCSS
-    - **[both]** Extract text
-  - Postcss
-    - **[both]** Autoprefixer (rajoute les prefix pour la compatiblité navigateur (voir browserslist dans package.json) )
-    - **[both]** css-mqpacker (concat les medias query) 
-  - Purify
-    - **[prod]** Purify (remove les class useless)
-    - **[prod]** Uglify (minifie)
-  - **[prod]** Eslint
+    - **[both]** [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)
+    - **[prod]** [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin) (Minification du JS)
+  - [Postcss](https://github.com/postcss/postcss-loader)
+    - **[both]** [Autoprefixer](https://github.com/postcss/autoprefixer) (rajoute les prefix pour la compatiblité navigateur (voir browserslist dans package.json) )
+    - **[both]** [css-mqpacker](https://github.com/hail2u/node-css-mqpacker) (Concat les medias query) 
+  - **[prod]** [Purify](https://github.com/webpack-contrib/purifycss-webpack) (Remove les class useless)
+  - **[prod]** [Eslint](https://github.com/MoOx/eslint-loader)
+  - **[prod]** [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) (Optimisation des images)
 
 
 # Documentation :
@@ -52,9 +53,8 @@ CODE !
 - Starter
   - [X] Moteur de template TWIG (twig branch)
   - [X] Moteur de template JADE (pug branch)
-  - [ ] Minification d'image (+ redirection dans le dossier de destination)
-  - [ ] SVG compilator plugin
-  - [x] Twig webpack livereload with php
+  - [X] Minification d'image (+ redirection dans le dossier de destination)
+  - [ ] Générateur de sprite
 - Twig 
   - [x] Moteur de template twig
   - [ ] tuto add twig file

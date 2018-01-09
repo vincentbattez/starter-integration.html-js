@@ -1,13 +1,13 @@
 @mixin media($media){
   // Code pour les grand écrans d'ordinateurs
   @if $media == "large-desktop"{
-    @media screen and (min-width: #{$desktop}) {
+    @media screen and (min-width: #{$large-desktop}) {
       @content;
     }
   }
   // Code pour les écrans d'ordinateurs et +
   @if $media == "desktop"{
-    @media screen and (min-width: #{$tablet}) {
+    @media screen and (min-width: #{$desktop}) {
       @content;
     }
   }
@@ -137,8 +137,8 @@
 
 
 
-@function calculateRem($normal-font) {
-  $remSize: $normal-font / 16px;
+@function calculateRem($fz-body) {
+  $remSize: $fz-body / 16px;
   @return  $remSize * 1rem;
 }
 

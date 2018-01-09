@@ -4,7 +4,7 @@
     "yarn.lock": true,
     ".vscode": true,
     "node_modules": true,
-    "dist": true,
+    // "dist": true,
     
     "webpack.*.js": true,
     "composer.*": true,
@@ -13,7 +13,7 @@
     "vendor": true,
     ".babelrc": true,
     ".gitignore": true,
-    "package*.json": true,
+    "package-lock.json": true,
     ".eslintrc.json": true,
     "compile.config": true,
     "init.php": true,
