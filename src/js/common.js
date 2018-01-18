@@ -1,5 +1,6 @@
-// JS commun à toutes les pages
-
+/*------------------------------------*\
+    $ IMPORTS
+\*------------------------------------*/
 export default {
   init() {
     console.log('Je suis dans toutes les pages');

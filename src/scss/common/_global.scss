@@ -27,6 +27,9 @@ main {
   }
 }
 
+/*------------------------------------*\
+    $ LIST
+\*------------------------------------*/
 .list {
   &.list--nostyle {
     padding    : 0;
@@ -45,7 +48,7 @@ main {
   }
 }
 
-@include media('mobile') {
+@include mobile {
   .container {
     .content {
       padding   : 0 $gap-global-mobile;

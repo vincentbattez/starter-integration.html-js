@@ -51,4 +51,4 @@ CODE !
   - [X] Moteur de template TWIG (twig branch)
   - [X] Moteur de template JADE (pug branch)
   - [X] Minification d'image (+ redirection dans le dossier de destination)
-  - [ ] Générateur de sprite
+  - [ ] [Générateur SVG](https://www.npmjs.com/package/webpack-svgstore-plugin)

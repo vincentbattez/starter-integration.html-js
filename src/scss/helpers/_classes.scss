@@ -1,4 +1,3 @@
-
 .hide{
   display: none !important;
   @each $media in $list-medias{
@@ -50,7 +49,7 @@
   }
 }
 
-@include media('tablet') {
+@include tablet {
   .full.container > .content {
     margin-left : -$gap-global-mobile;
   }

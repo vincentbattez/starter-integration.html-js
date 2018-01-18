@@ -1,73 +1,80 @@
-@mixin media($media){
-  // Code pour les grand écrans d'ordinateurs
-  @if $media == "large-desktop"{
-    @media screen and (min-width: #{$large-desktop}) {
-      @content;
-    }
-  }
-  // Code pour les écrans d'ordinateurs et +
-  @if $media == "desktop"{
-    @media screen and (min-width: #{$desktop}) {
-      @content;
-    }
-  }
-  // Code uniquement pour les écrans de tablette
-  @if $media == "only-tablet"{
-    @media screen and (min-width: #{$mobile}) and (max-width: #{$tablet}) {
-      @content;
-    }
-  }
-  // Code pour les écrans de tablette et -
-  @if $media == "tablet"{
-    @media screen and (max-width: #{$tablet}) {
-      @content;
-    }
-  }
-  // Code uniquement pour les écrans mobile
-  @if $media == "mobile"{
-    @media screen and (max-width: #{$mobile}) {
-      @content;
-    }
-  }
-  // Code uniquement pour les écrans en format paysage
-  @if $media == "landscape"{
-    @media screen and (orientation: landscape) {
-      @content;
-    }
-  }
-  // Code uniquement pour l'impression
-  @if $media == "print"{
-    @media print {
-      @content;
-    }
+/*------------------------------------*\
+    $ MEDIAS QUERIES
+\*------------------------------------*/
+// Code pour les grand écrans d'ordinateurs
+@mixin large-desktop {
+  @media screen and (min-width: #{$large-desktop}) {
+    @content;
   }
 }
-// Ordre à la quel les medias doivent être écrite : 
-/* Plus grand au plus petit
+// Code pour les écrans d'ordinateurs et +
+@mixin desktop {
+  @media screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+// Code uniquement pour les écrans de tablette
+@mixin only-tablet {
+  @media screen and (min-width: #{$mobile}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+// Code pour les écrans de tablette et -
+@mixin tablet {
+  @media screen and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+// Code uniquement pour les écrans mobile
+@mixin mobile {
+  @media screen and (max-width: #{$mobile}) {
+    @content;
+  }
+}
+// Code uniquement pour les écrans en format paysage
+@mixin landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+// Code uniquement pour l'impression
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+/*__.----------*\
+    $ USAGE
+\*__.----------*//*
 
-  large-desktop = très grand 
-  desktop       = grand 
-  tablet        = moyen 
-  only-tablet   = only moyen 
-  mobile        = only petit 
-  landscape    = spécial
-  print         = spécial
+  @include mobile{
+    // code
+  };
+
+  @include tablet{
+    // code
+  };
 
 */
-/* @USAGE 
-    @include media('mobile'){
-      // code
-    };
+@mixin media($media){
+  @media screen and (#{$media}) {
+    @content;
+  }
+}
+/*__.----------*\
+    $ USAGE
+\*__.----------*//*
 
-    @include media('tablet'){
-      // code
-    };
-    ...
+  @include media('max-width:1024px'){
+    // code
+  };
+
 */
 
 
-
-
+/*__.---------------------------*\
+    $ CENTRER
+\*__.---------------------------*/
 // Define vertical, horizontal, or both position
 @mixin center-absolute($xy) {
   position: absolute;
@@ -86,7 +93,10 @@
     transform: translate(-50%, -50%);
   }
 }
-/* @USAGE 
+/*__.----------*\
+    $ USAGE
+\*__.----------*//*
+
   .class1 {
     @include center-absolute('x');
   }
@@ -96,6 +106,7 @@
   .class3 {
     @include center-absolute('xy');
   }
+
 */
 
 @mixin center-block {
@@ -103,10 +114,14 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* @USAGE 
+/*__.----------*\
+    $ USAGE
+\*__.----------*//*
+
   .class1 {
     @include center-block;
   }
+
 */
 
 @mixin center-flex($xy) {
@@ -123,7 +138,10 @@
     justify-content: center;
   }
 }
-/* @USAGE 
+/*__.----------*\
+    $ USAGE
+\*__.----------*//*
+
   .class1 {
     @include center-flex('x');
   }
@@ -133,10 +151,13 @@
   .class3 {
     @include center-flex('xy');
   }
+
 */
 
 
-
+/*__.---------------------------*\
+    $ FONT-SIZE
+\*__.---------------------------*/
 @function calculateRem($fz-body) {
   $remSize: $fz-body / 16px;
   @return  $remSize * 1rem;
@@ -146,8 +167,12 @@
   font-size: $size;
   font-size: calculateRem($size);
 }
-/* @USAGE 
+/*__.----------*\
+    $ USAGE
+\*__.----------*//*
+
   .class1 {
     @include font-size(20px);
   }
+
 */
