@@ -3,6 +3,7 @@
 ## Getting start
 ```
 npm i
+composer install
 npm run start
 ```
 CODE !
