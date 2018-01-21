@@ -1,0 +1,25 @@
+{% extends "layout.twig" %}
+
+{% set currentPage = {
+  title: 'Titre du site',
+  description: 'description de la page',
+  bodyClass: 'homepage',
+  navActive: 'Homepage',
+} %}
+
+{# {% block style %}
+<style>
+</style>
+{% endblock %} #}
+
+{% block header %} {% include '_include/main-header.twig' %} {% endblock %}
+{% block body %}
+  <p>homepage</p>
+  <img src="./src/img/homepage/logo.png" alt="">
+{% endblock %}
+
+
+{# {% block script %}
+<script>
+</script>
+{% endblock %} #}
