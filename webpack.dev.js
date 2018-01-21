@@ -41,15 +41,6 @@ module.exports = merge(common, {
         ],
       })
     },
-    {
-      test: /\.html$/,
-      use: {
-        loader: 'html-loader',
-        options: {
-          minimize: false
-        }
-      }
-    }
   ]},
   plugins: [
     new BrowserSyncPlugin({ 

@@ -78,19 +78,19 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
-    new PurifyCSSPlugin({
-      // Give paths to parse for rules. These should be absolute!
-      paths: glob.sync([
-        config.purify.testFile,
-        config.distPath + config.bundle_JS
-      ]),
-      purifyOptions: {
-        minify: true,
-        info: true,
-        rejected: true,
-        // whitelist: []
-      }
-    }),
+    // new PurifyCSSPlugin({
+    //   // Give paths to parse for rules. These should be absolute!
+    //   paths: glob.sync([
+    //     config.purify.testFile,
+    //     config.distPath + config.bundle_JS
+    //   ]),
+    //   purifyOptions: {
+    //     minify: true,
+    //     info: true,
+    //     rejected: true,
+    //     // whitelist: []
+    //   }
+    // }),
     new UglifyJsPlugin({}),
   ],
 });

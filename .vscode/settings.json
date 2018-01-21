@@ -17,7 +17,7 @@
     ".eslintrc.json": true,
     "compile.config": true,
     "init.php": true,
-    "package*.json": true,
+    // "package*.json": true,
   },
     "eslint.options": {
         "configFile": "./.eslintrc.json"

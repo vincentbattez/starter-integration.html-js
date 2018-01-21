@@ -1,41 +1,7 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 const config = require("./compile.config");
-
-// var path = require('path'),
-//     fs   = require('fs');
-
-// function fromDir(startPath, filter) {
-//   if (!fs.existsSync(startPath)) {
-//     console.log("no dir ", startPath);
-//     return;
-//   }
-//   var files = fs.readdirSync(startPath);
-//   var listFile = [];
-//   for (var i = 0; i < files.length; i++) {
-//     var filepath = path.join(startPath, files[i]);
-//     var stat = fs.lstatSync(filepath);
-//     var filename = filepath.replace(config.srcPath+'/', "");
-//     if (stat.isDirectory()) {
-//       fromDir(filepath, filter); //recurse
-//     } else if (filepath.indexOf(filter) >= 0) {
-//       listFile.push(filename)
-//     };
-//   };
-//   return listFile;
-// };
-// var HtmlWebpackPluginList = [];
-// for (const filename of fromDir(config.srcPath,'.html')) {
-//     HtmlWebpackPluginList.push(
-//       new HtmlWebpackPlugin({
-//       filename: filename, template: config.srcPath+'/'+filename,
-//     })
-//   )
-// }
-// console.log(HtmlWebpackPluginList);
-
 
 module.exports = {
   entry: [
@@ -80,8 +46,5 @@ module.exports = {
       // filename: config.distFolder_CSS + config.bundle_CSS, // name of bundle css + css dist folder
       allChunks: true
     }),
-    // IMPORTS ALL HTML FILES
-    new HtmlWebpackPlugin({ filename: 'index.html', template: config.srcPath+'/index.html' }),
-    new HtmlWebpackPlugin({ filename: 'test.html', template: config.srcPath+'/test.html' }),
   ],
 }
