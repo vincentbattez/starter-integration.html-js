@@ -1,14 +1,23 @@
 console.log("ready!");
-
-// Import les librairies
+/*------------------------------------*\
+    $ LIBRAIRIES
+\*------------------------------------*/
+import 'jquery';
 import './lib/unelib';
 
-// Import toutes les pages et le commun
+/*------------------------------------*\
+    $ LIBRAIRIES
+\*------------------------------------*/
 import Router from './util/Router';
 import common from './common';
 import homepage from './pages/homepage';
 
-/** Populate Router instance with DOM routes */
+/*------------------------------------*\
+    $ ROUTER
+\*------------------------------------*//*
+  <body class="homepage">
+
+*/
 const routes = new Router({
   // Commun
   common,
@@ -17,4 +26,5 @@ const routes = new Router({
 });
 
 // Load Events
+// eslint-disable-next-line rule
 jQuery(document).ready(() => routes.loadEvents());

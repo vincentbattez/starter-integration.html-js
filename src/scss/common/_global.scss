@@ -2,6 +2,8 @@ body,
 html {
   height : 100%;
   width : 100%;
+  background-image: url($pathIMG+'svg/add-black.svg')
+
 }
 
 body {}
@@ -27,6 +29,9 @@ main {
   }
 }
 
+/*------------------------------------*\
+    $ LIST
+\*------------------------------------*/
 .list {
   &.list--nostyle {
     padding    : 0;
@@ -45,7 +50,7 @@ main {
   }
 }
 
-@include media('mobile') {
+@include mobile {
   .container {
     .content {
       padding   : 0 $gap-global-mobile;

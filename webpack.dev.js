@@ -11,7 +11,7 @@ module.exports = merge(common, {
   module: {
     // SASS
     rules: [{
-      test: /\.scss$/,
+      test: /\.s[ac]ss$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: [{
@@ -40,8 +40,17 @@ module.exports = merge(common, {
           },
         ],
       })
-    }, ]
-  },
+    },
+    {
+      test: /\.html$/,
+      use: {
+        loader: 'html-loader',
+        options: {
+          minimize: false
+        }
+      }
+    }
+  ]},
   plugins: [
     new BrowserSyncPlugin({ 
         // browse to http://localhost:8888/ during development,  
