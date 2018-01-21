@@ -5,23 +5,24 @@ const config = require("./compile.config");
 
 module.exports = {
   entry: [
-    'babel-polyfill',     // ES6
-    config.srcMain_JS,    // main JS
-    config.srcMain_SCSS   // main CSS
+    'babel-polyfill', // ES6
+    config.srcMain_JS, // main JS
+    config.srcMain_SCSS // main CSS
   ],
   output: {
-    path: config.distPath,      // destination : voir compile.config
-    filename: config.bundle_JS  // JS bundle
+    path: config.distPath, // destination : /dist/
+    filename: config.bundle_JS // JS bundle
   },
   externals: {
     jquery: 'jQuery'
   },
   module: {
+    // BABEL
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        use: 'babel-loader',
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
