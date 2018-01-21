@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const config = require("./compile.config");
 
@@ -47,9 +48,6 @@ module.exports = {
     filename: config.bundle_JS   // name of bundle js
     // filename: config.distFolder_JS + config.bundle_JS   // name of bundle js
   },
-  externals: {
-    jquery: 'jQuery'
-  },
   module: {
     rules: [
       {
@@ -73,6 +71,10 @@ module.exports = {
     ]
   },
   plugins: [
+		new webpack.ProvidePlugin({
+			$:'jquery',
+			jQuery:'jquery'
+		}),
     new ExtractTextPlugin({
       filename: config.bundle_CSS, // name of bundle css + css dist folder
       // filename: config.distFolder_CSS + config.bundle_CSS, // name of bundle css + css dist folder
