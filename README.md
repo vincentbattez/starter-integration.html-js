@@ -21,18 +21,30 @@ npm run prod
 ```
 
 ## Add JS file
-1) Ajouter votre fichier JS dans l'une des catégories suivante :
+1) Ajouter ton fichier JS dans l'une des catégories suivante :
 - src/js/<b>components</b>/ (btn, navbar, carrousel...)
 - src/js/<b>lib</b>/ (librairie ajouté)
-- src/js/<b>pages</b>/ (JS uniquement sur les pages)
+- src/js/<b>pages</b>/ (JS uniquement sur des pages page spécifique)
 - src/js/<b>commun.js</b> (Pour toute les pages)
 
 2) Import ton fichier JS dans le bon fichier main
-3) Si tu ajoute une page, Import ton js page dans app.js
+3) Si tu ajoute une page, Import ton js page dans ``app.js``
 
 ## Add SCSS file
-1) Ajoute ton fichier SCSS
+1) Créer ton fichier SCSS dans le dossier source
 2) Import ton fichier SCSS dans main.scss
+
+## Add HTML file
+1) Créer ton fichier HTML dans le dossier source
+2) Import ton fichier HTML dans ``webpack.common.js``
+````js
+/*
+  plugins: [
+    // IMPORTS ALL HTML FILES
+    ...
+*/
+new HtmlWebpackPlugin({ filename: 'TONHTML.html', template: config.srcPath+'/TONHTML.html' }),
+````
 
 # Technos :
 - HTML

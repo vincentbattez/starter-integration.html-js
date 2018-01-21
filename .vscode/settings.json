@@ -6,7 +6,9 @@
     "node_modules": true,
     // "dist": true,
     
-    "webpack.*.js": true,
+    // "webpack.common.js": true,
+    "webpack.dev.js": true,
+    "webpack.prod.js": true,
     ".babelrc": true,
     ".gitignore": true,
     "package-lock.json": true,
