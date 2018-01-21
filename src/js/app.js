@@ -26,4 +26,5 @@ const routes = new Router({
 });
 
 // Load Events
+// eslint-disable-next-line rule
 jQuery(document).ready(() => routes.loadEvents());

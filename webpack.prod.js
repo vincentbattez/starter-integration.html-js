@@ -2,6 +2,7 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const glob = require('glob-all');
 
@@ -14,7 +15,7 @@ module.exports = merge(common, {
     // SASS
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [ // use sass + css loader
@@ -41,43 +42,39 @@ module.exports = merge(common, {
         })
       },
       {
-        enforce: "pre",
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-      },
-      { 
         test: /\.(gif|png|jpe?g|svg)$/i, 
         use: [
           {
             loader: 'image-webpack-loader',
             options: {
-              options: {
-                mozjpeg: {
-                  progressive: true, 
-                  quality: 65 
-                },
-                // optipng.enabled: false will disable optipng 
-                optipng: {
-                  enabled: true,
-                },
-                pngquant: {
-                  quality: '65-90',
-                  speed: 4
-                },
-                gifsicle: {
-                  interlaced: false,
-                },
-              }
+              mozjpeg: {
+                progressive: true, 
+                quality: 65 
+              },
+              // optipng.enabled: false will disable optipng 
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
             },
           },
         ],
       },
+      {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            minimize: true
+          }
+        }
+      }
     ]
   },
   plugins: [
