@@ -6,13 +6,13 @@
     "node_modules": true,
     // "dist": true,
     
-    "webpack.dev.js": true,
-    "webpack.prod.js": true,
+    // "webpack.dev.js": true,
+    // "webpack.prod.js": true,
     ".babelrc": true,
     ".gitignore": true,
     "package-lock.json": true,
     ".eslintrc.json": true,
-    "compile.config": true
+    // "compile.config": true
   },
     "eslint.options": {
         "configFile": "./.eslintrc.json"

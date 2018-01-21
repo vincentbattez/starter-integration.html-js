@@ -1,52 +1,53 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const config = require("./compile.config");
 
 module.exports = {
   entry: [
-    'babel-polyfill', // ES6
-    config.srcMain_JS, // main JS
-    config.srcMain_SCSS // main CSS
+    'babel-polyfill',         // ES6
+    config.srcPathMain_JS,    // main JS
+    config.srcPathMain_SCSS   // main CSS
   ],
   output: {
-    path: config.distPath, // destination : /dist/
-    filename: config.bundle_JS // JS bundle
-  },
-  externals: {
-    jquery: 'jQuery'
+    path: config.distPath,                              // destination : voir compile.config
+    filename: config.bundle_JS   // name of bundle js
+    // filename: config.distFolder_JS + config.bundle_JS   // name of bundle js
   },
   module: {
-    // BABEL
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        loader: "babel-loader",
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
-            loader : 'file-loader',
+            loader: 'url-loader',
             options: {
+              limit: 8192,
               name: '[name].[ext]',
-              outputPath: 'img/',
-            },
+              outputPath: config.distFolder_IMG,
+            }
           },
-        ],
-      }
+        ]
+      },
     ]
   },
   plugins: [
-    new ExtractTextPlugin({ // Extrait le CSS du JS dans un fichier CSS externe
-      filename: config.bundle_CSS,
+		new webpack.ProvidePlugin({
+			$:'jquery',
+			jQuery:'jquery'
+		}),
+    new ExtractTextPlugin({
+      filename: config.bundle_CSS, // name of bundle css + css dist folder
+      // filename: config.distFolder_CSS + config.bundle_CSS, // name of bundle css + css dist folder
       allChunks: true
     }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      template: config.srcPath_HTML + '/homepage.pug',  
-      filename: config.distPath+'/homepage.html'
-    })
+    // IMPORTS ALL HTML FILES
+    new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: config.srcPath_HTML + '/homepage.pug' }),
   ],
 }

@@ -1,6 +1,9 @@
+/*------------------------------------*\
+    $ TYPOGRAPHY
+\*------------------------------------*/
 body {
   font-family : $ff-body;
-  font-size   : $fz-body;
+  @include      font-size($fz-body);
   font-weight : normal;
 }
 

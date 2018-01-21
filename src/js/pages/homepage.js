@@ -1,4 +1,6 @@
-// IMPORT LES COMPOSANTS (comme navbar ou bouton)
+/*------------------------------------*\
+    $ IMPORTS
+\*------------------------------------*/
 import * as navbar from '../components/navbar';
 
 export default {
