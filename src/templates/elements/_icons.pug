@@ -1,0 +1,14 @@
+mixin icon(icon_name)
+  - moreClass = attributes.class ? " "+attributes.class : ""
+  span(class="icon-sprite-vivescia icon-" + icon_name + moreClass)
+//------------------------------------*\
+    $ ICON
+    //________  @VAR
+      1: icon_name : nom de l'icône (ex: menu)
+
+    //________  @USE
+      +ICON(menu)
+
+    //________  @RETURN
+      HTML_output
+//------------------------------------*\

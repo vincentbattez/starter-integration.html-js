@@ -14,8 +14,8 @@ html(lang='fr')
     block CSS
 
   body(class=bodyClass)
-    include layouts/navbars
-    include layouts/header
+    include layouts/_navbars
+    include layouts/_header
 
 
     //- Content
@@ -23,7 +23,7 @@ html(lang='fr')
       block main
 
 
-    include layouts/footer    
+    include layouts/_footer    
     //- Scripts
     script(src='../node_modules/jquery/dist/jquery.min.js')
     script(src=pathJs)

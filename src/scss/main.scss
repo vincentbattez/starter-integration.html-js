@@ -9,29 +9,27 @@
 \*------------------------------*//*
   C'est pour que webpack compile bien dans l'ordre
 */
-@include large-desktop  {.mqpacker{display: none;}} 
-@include desktop        {.mqpacker{display: none;}} 
-@include tablet         {.mqpacker{display: none;}} 
-@include only-tablet    {.mqpacker{display: none;}} 
-@include mobile         {.mqpacker{display: none;}} 
-@include landscape      {.mqpacker{display: none;}} 
-@include print          {.mqpacker{display: none;}}
+@include large-desktop  {.mqpacker{width: initial;}} 
+@include desktop        {.mqpacker{width: initial;}} 
+@include tablet         {.mqpacker{width: initial;}} 
+@include only-tablet    {.mqpacker{width: initial;}} 
+@include mobile         {.mqpacker{width: initial;}} 
+@include landscape      {.mqpacker{width: initial;}} 
+@include print          {.mqpacker{width: initial;}}
 
 /*------------------------------*\
     $ LIBS & NODE_MODULES
-\*------------------------------*//*
-  Import npm dependencies
- 
-  Prefix your imports with `~` to grab from node_modules/
-  @see https://github.com/webpack-contrib/sass-loader#imports
- */
-@import "~normalize.css";
+
+  @exemple: @import "~bootstrap/dist/css/bootstrap";
+  @see:     https://github.com/webpack-contrib/sass-loader#imports
+\*------------------------------*/
 
 /*------------------------------*\
     $ GOOGLE FONT
-\*------------------------------*//*
-  VOIR : https://fonts.google.com/
-*/
+
+  @exemple: @import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto:400,700');
+  @see:     https://fonts.google.com/
+\*------------------------------*/
 
 /*------------------------------*\
     $ COMMON
@@ -52,6 +50,11 @@
 @import "elements/buttons";
 
 /*------------------------------------*\
+    $ MODULES
+\*------------------------------------*/
+@import "modules/cards";
+
+/*------------------------------------*\
     $ LAYOUTS
 \*------------------------------------*/
 @import "layouts/headers";
@@ -64,4 +67,9 @@
 \*------------------------------------*/
 .homepage { // <body class="homepage">
   @import "pages/homepage";
+}
+.A_SUPPRIMER__SCSS-img {
+  width: 500px;
+  height: 500px;
+  background-image: url($pathIMG+'svg/add-black.svg')
 }

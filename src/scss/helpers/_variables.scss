@@ -1,14 +1,9 @@
 /*------------------------------------*\
     $ COLORS
 \*------------------------------------*/
-  $primary   : #3bcf9a;
-  $secondary : #0b0726;
-  $grey      : #e2e1e0;
-  
-  $error:   #e91e1e;
-  $warning: #ffc107;
-  $valid:   #3bcf9a;
-  $info:    #03a9f4;
+  $primary   : #3bcf9a !default;
+  $secondary : #0b0726 !default;
+  $grey      : #e2e1e0 !default;
 
 /*------------------------------------*\
     $ SHADOWS
@@ -24,7 +19,7 @@
 \*------------------------------------*/
   $ff-body:     Helvetica, Roboto, 'Open Sans', Arial, sans-serif; 
     $fz-body:   16px; 
-  $ff-title:    Helvetica, Roboto, 'Open Sans', Arial, sans-serif;
+  $ff-title:    'Times New Roman', Times, serif;
     $fz-h1:     35px; 
     $fz-h2:     30px;
 /*------------------------------------*\
@@ -33,20 +28,9 @@
   $pathIMG : "../img/";
 
 /*------------------------------------*\
-    $ GAP
-\*------------------------------------*/
-  $gap-global        : 20px;
-  $gap-global-mobile : 30px;
-
-/*------------------------------------*\
     $ OTHER
 \*------------------------------------*/
-  $maxwidth-global : 1024px;
   $list-medias: large-desktop desktop tablet only-tablet mobile landscape print;
-  $list-etat: (error,   $error),
-              (warning, $warning),
-              (valid,   $valid),
-              (info,    $info);
 
 /*------------------------------------*\
     $ MEDIAS

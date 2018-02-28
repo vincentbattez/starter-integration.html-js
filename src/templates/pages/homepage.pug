@@ -3,8 +3,8 @@ extends ../main
   VARIABLES
 //- 
 block vars
-  - var documentTitle = 'Homepage'
-  - var documentDesc  = 'Vous êtes dans la Homepage'
+  - var documentTitle = 'Je suis le titre de la homepage'
+  - var documentDesc  = 'Je suis la description de la Homepage'
   - var bodyClass     = "homepage"
 //- 
   CONTENT
@@ -12,5 +12,12 @@ block vars
 block main
   section.container
     .content
-      p je suis dans la homepage.
-      img(src=pathImg+"homepage/logo.png")
+      h1 je suis dans la homepage.
+      hr
+
+      h2 balise img html :
+      img(src=pathImg+"homepage/logo.png" style="width:400px")
+      hr
+
+      h2 div dans image en SCSS background-image
+      .A_SUPPRIMER__SCSS-img

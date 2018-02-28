@@ -12,8 +12,13 @@ const config = require("./compile.config");
 
 module.exports = merge(common, {
   module: {
-    // SASS
+    /*------------------------------------*\
+        $ RULES
+    \*------------------------------------*/
     rules: [
+      /* - - - - - - - - - - - - *\
+          $ SASS
+      \* - - - - - - - - - - - - */
       {
         test: /\.s[ac]ss$/,
         use: ExtractTextPlugin.extract({
@@ -41,6 +46,9 @@ module.exports = merge(common, {
           ],
         })
       },
+      /* - - - - - - - - - - - - *\
+          $ IMAGES
+      \* - - - - - - - - - - - - */
       {
         test: /\.(gif|png|jpe?g|svg)$/i, 
         use: [
@@ -66,31 +74,58 @@ module.exports = merge(common, {
           },
         ],
       },
+      /* - - - - - - - - - - - - *\
+          $ PUG
+      \* - - - - - - - - - - - - */
       {
         test: /\.pug$/,
         use: {
           loader: 'pug-loader',
           options: {
-            pretty: false,
+            pretty: html_pretty,
           }
         }
       }
     ]
   },
-  plugins: [
-    new PurifyCSSPlugin({
-      // Give paths to parse for rules. These should be absolute!
-      paths: glob.sync([
-        config.purify.testFile,
-        config.distPath + config.bundle_JS
-      ]),
-      purifyOptions: {
-        minify: true,
-        info: true,
-        rejected: true,
-        // whitelist: []
-      }
-    }),
-    new UglifyJsPlugin({}),
-  ],
+  /*------------------------------------*\
+      $ PLUGINS
+  \*------------------------------------*/
+  plugins: js_minification ? [
+      /* - - - - - - - - - - - - *\
+          $ true
+      \* - - - - - - - - - - - - */
+      new PurifyCSSPlugin({
+        // Give paths to parse for rules. These should be absolute!
+        paths: glob.sync([
+          config.purify.testFile,
+          config.distPath + config.bundle_JS
+        ]),
+        purifyOptions: {
+          minify: css_minification,
+          info: true,
+          rejected: true,
+          // whitelist: []
+        }
+      }),
+      new UglifyJsPlugin({}),
+    ] :
+    [
+      /* - - - - - - - - - - - - *\
+          $ false
+      \* - - - - - - - - - - - - */
+      new PurifyCSSPlugin({
+        // Give paths to parse for rules. These should be absolute!
+        paths: glob.sync([
+          config.purify.testFile,
+          config.distPath + config.bundle_JS
+        ]),
+        purifyOptions: {
+          minify: css_minification,
+          info: true,
+          rejected: true,
+          // whitelist: []
+        }
+      })
+    ],
 });

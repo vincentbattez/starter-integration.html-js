@@ -6,62 +6,81 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const config = require("./compile.config");
 
+let devtool = (sourcemap) ? 'source-map' : ' ';
 module.exports = merge(common, {
-  devtool: 'source-map', // Active les source-map
+  devtool: devtool, // Active les source-map selon la config choisie
   module: {
-    // SASS
-    rules: [{
-      test: /\.s[ac]ss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              sourceMap: true,
-            }
-          },
+    /*------------------------------------*\
+        $ RULES
+    \*------------------------------------*/
+    rules: [
+      /* - - - - - - - - - - - - *\
+          $ SASS
+      \* - - - - - - - - - - - - */
+      {
+        test: /\.s[ac]ss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [{
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                sourceMap: sourcemap,
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: (loader) => [
+                  require('autoprefixer')(),
+                  require('css-mqpacker')(), // concat les médias
+                ],
+                sourceMap: sourcemap,
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: sourcemap
+              }
+            },
+          ],
+        })
+      },
+      /* - - - - - - - - - - - - *\
+          $ PUG
+      \* - - - - - - - - - - - - */
+      {
+        test: /\.pug$/,
+        use: [
           {
-            loader: 'postcss-loader',
+            loader: 'pug-loader',
             options: {
-              ident: 'postcss',
-              plugins: (loader) => [
-                require('autoprefixer')(),
-                require('css-mqpacker')(), // concat les médias
-              ],
-              sourceMap: true,
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            }
+              pretty: true
+            },
           },
         ],
-      })
-    },
-    {
-      test: /\.pug$/,
-      use: [
-        {
-          loader: 'pug-loader',
-          options: {
-            pretty: true
-          },
-        },
-      ],
       }
   ]},
+  /*------------------------------------*\
+      $ PLUGINS
+  \*------------------------------------*/
   plugins: [
+    /* - - - - - - - - - - - - *\
+        $ BrowserSyncPlugin
+    \* - - - - - - - - - - - - */
     new BrowserSyncPlugin({
-      // browse to http://localhost:3000/ during development, 
+      // go to http://localhost:3000/dist/homepage.html
       host: 'localhost',
       port: 3000,
       server: {
         baseDir: ['./']
       }
     }),
+    /* - - - - - - - - - - - - *\
+        $ CleanWebpackPlugin
+    \* - - - - - - - - - - - - */
     new CleanWebpackPlugin([config.distPath])
   ],
 });
