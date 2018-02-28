@@ -1,14 +1,17 @@
-mixin icon(icon_name)
-  - moreClass = attributes.class ? " "+attributes.class : ""
-  span(class="icon-sprite-vivescia icon-" + icon_name + moreClass)
 //------------------------------------*\
-    $ ICON
+    $ element : icons
+//------------------------------------*/
+mixin icon(icon_name, icon_description="")
+  span(class="fa fa-" + icon_name aria-label=icon_description)&attributes(attributes)
+//------------------------------------*\
+    $ icon
     //________  @VAR
-      1: icon_name : nom de l'icône (ex: menu)
+      1: icon-name        : nom de l'icone (ex: 'menu')
+      2: icon-description : aria label de l'icone (ex: 'ouverture du menu')
 
     //________  @USE
-      +ICON(menu)
+      +icon("menu", "Ouverture du menu")
 
     //________  @RETURN
-      HTML_output
+      <span class="fa fa-menu" aria-label="Ouverture du menu"></span>
 //------------------------------------*\

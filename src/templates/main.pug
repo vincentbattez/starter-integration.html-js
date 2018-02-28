@@ -18,13 +18,17 @@ html(lang='fr')
     include layouts/_header
 
 
-    //- Content
+    //------------------------------------*\
+        $ PAGES
+    //------------------------------------*/
     main(role="main")
       block main
 
 
-    include layouts/_footer    
-    //- Scripts
+    include layouts/_footer   
+    //------------------------------------*\
+        $ SCRIPTS
+    //------------------------------------*/
     script(src='../node_modules/jquery/dist/jquery.min.js')
     script(src=pathJs)
     block JS
