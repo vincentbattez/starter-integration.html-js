@@ -35,8 +35,8 @@ npm run prod
 2) Import ton fichier SCSS dans main.scss
 
 ## Add HTML file
-1) Créer ton fichier HTML dans le dossier source
-2) Import ton fichier HTML dans ``webpack.common.js``
+1) Créer ton fichier PUG dans le dossier source/templates/pages
+2) Import ton fichier PUG dans ``webpack.common.js``
 ````js
 /*
   plugins: [
@@ -48,8 +48,6 @@ new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: co
 
 # Technos :
 - HTML
-- CSS
-  - Normalize.css 7.0.0
 - SCSS
 - JS
   - Jquery 3.2.1
@@ -82,10 +80,5 @@ ERROR in Error: Child compilation failed:
 > [Solution](https://github.com/tcoopman/image-webpack-loader/issues/51) : ``brew install libpng`` 
 
 # TODO :
-- pug
-  - [ ] tuto add pug file
 - Starter
-  - [X] Moteur de template TWIG (twig branch)
-  - [X] Moteur de template JADE (pug branch)
-  - [X] Minification d'image (+ redirection dans le dossier de destination)
   - [ ] [Générateur SVG](https://www.npmjs.com/package/webpack-svgstore-plugin)
