@@ -5,8 +5,10 @@
   "main": "src/js/app.js",
   "scripts": {
     "build": "webpack --config webpack.dev.js",
+    "dev": "npm run build",
     "prod": "webpack --config webpack.prod.js",
-    "start": "webpack --config webpack.dev.js --watch"
+    "start": "webpack --config webpack.dev.js --watch",
+    "watch": "npm run start"
   },
   "author": "Vincent Battez",
   "license": "ISC",
@@ -39,7 +41,8 @@
     "uglifyjs-webpack-plugin": "^1.1.2",
     "url-loader": "^0.6.2",
     "webpack": "^3.9.1",
-    "webpack-merge": "^4.1.1"
+    "webpack-merge": "^4.1.1",
+    "webpack-svgstore-plugin": "^4.0.1"
   },
   "dependencies": {
     "jquery": "^3.2.1",

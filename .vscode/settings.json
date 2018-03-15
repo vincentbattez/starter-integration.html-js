@@ -17,4 +17,5 @@
     "eslint.options": {
         "configFile": "./.eslintrc.json"
     },
+    "editor.tabSize": 2,
 }

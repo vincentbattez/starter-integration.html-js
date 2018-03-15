@@ -59,6 +59,7 @@ new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: co
   - **[both]** [file-loader](https://github.com/webpack-contrib/file-loader) (copie img dans le dossier de destination)
   - **[both]** [url-loader](https://github.com/webpack-contrib/url-loader) (copie img dans le dossier de destination)
   - **[both]** [html-loader](https://github.com/webpack-contrib/html-loader) (copie html dans le dossier de destination (**PROD** : minify html))
+  -  **[both]** [webpack-svgstore-plugin](https://www.npmjs.com/package/webpack-svgstore-plugin) (Génère un .svg contenant toutes les icônes)
   - SCSS
     - **[both]** [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) (SASS & SCSS)
     - **[prod]** [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin) (Minification du JS)
@@ -71,6 +72,7 @@ new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: co
 
 
 # PROBLEM :
+**problem 1**
 ````bash
 ERROR in Error: Child compilation failed:
   Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
@@ -79,6 +81,18 @@ ERROR in Error: Child compilation failed:
 ````
 > [Solution](https://github.com/tcoopman/image-webpack-loader/issues/51) : ``brew install libpng`` 
 
+**problem 2**
+<br>`problème quelconque`
+> Supprimer package.lock.json
+
+**problem 3**
+```
+(node:38604) DeprecationWarning: Chunk.modules is deprecated. Use Chunk.getNumberOfModules/mapModules/forEachModule/containsModule instead.
+(node:38604) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): TypeError: Cannot read property 'viewBox' of undefined
+(node:38604) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+```
+> Vérifier si le code de toutes les icons est aux normes
+
+
 # TODO :
-- Starter
-  - [ ] [Générateur SVG](https://www.npmjs.com/package/webpack-svgstore-plugin)
+- [ ] Rassembler toutes les images dans un dossier dist

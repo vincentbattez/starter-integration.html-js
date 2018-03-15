@@ -2,7 +2,9 @@
     $ element : icons
 //------------------------------------*/
 mixin icon(icon_name, icon_description="")
-  span(class="fa fa-" + icon_name aria-label=icon_description)&attributes(attributes)
+  svg.icon(viewBox="0 0 100 100")&attributes(attributes)
+    use(xlink:href='#icon-' + icon_name)
+
 //------------------------------------*\
     $ icon
     //________  @VAR

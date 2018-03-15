@@ -1,6 +1,10 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
+
+
+var SvgStore = require('webpack-svgstore-plugin');
 
 const config = require("./compile.config");
 
@@ -19,6 +23,9 @@ module.exports = {
   output: {
     path: config.distPath,       // name of dist folder
     filename: config.bundle_JS   // name of bundle js
+  },    
+  resolve: {
+    extensions: ['.js']
   },
   module: {
     /*------------------------------------*\
@@ -49,8 +56,8 @@ module.exports = {
           },
         ]
       },
-    ]
-  },
+    ] // rules
+  }, // modules
   /*------------------------------------*\
       $ PLUGINS
   \*------------------------------------*/
@@ -75,6 +82,28 @@ module.exports = {
         $ HtmlWebpackPlugin (pug)
     \* - - - - - - - - - - - - - - */
     new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: config.srcPath_HTML + '/homepage.pug' }),
+    /* - - - - - - - - - - - - *\
+        $ SVGSTORE (icons)
+    \* - - - - - - - - - - - - */
+    new SvgStore({
+      // svgo options
+      svgoOptions: {
+        plugins: [
+          { removeDoctype: true },
+          { removeTitle: true },
+          { removeMetadata: true },
+          { removeComments: true },
+          { removeDesc: true },
+          { removeDimensions: true },
+          { removeUselessStrokeAndFill: true },
+          { removeUnknownsAndDefaults: true },
+          { cleanupIDs: true },
+          { cleanupAttrs: false },
+          { moveGroupAttrsToElems: true }
+        ]
+      },
+      prefix: 'icon-'
+    })
   ],
   /*------------------------------------*\
       $ EXTERNALS

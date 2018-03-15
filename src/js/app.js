@@ -25,6 +25,16 @@ const routes = new Router({
   homepage,
 });
 
+
+/*------------------------------------*\
+        $ XHR ICONS
+\*------------------------------------*/
+var __svg__  = { path: './../img/icons/**/*.svg', name: 'images/spriteXHR.svg' };
+__svg__      = { filename: 'dist/images/spriteXHR.svg'};
+
+require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
+
+
 // Load Events
 // eslint-disable-next-line rule
 jQuery(document).ready(() => routes.loadEvents());
