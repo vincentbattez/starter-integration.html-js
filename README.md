@@ -1,26 +1,38 @@
 # Intégration HTML / SCSS / JS avec Webpack
 
-## Getting start
+# Getting start
 ```bash
 npm i
 npm run start
 # CODE !
 ```
-### Development
+## Development
 ```bash
 # For autocompile source files
 npm run start
-# For compile 
+# OR For compile 
 npm run build
 ```
-### Production
+## Production
 ```bash
-# Need build and prod for Purify CSS
-npm run build
-npm run prod
+# /!!\ Need build and prod for Purify CSS
+npm run build && npm run prod
 ```
 
-## Add JS file
+## All commands
+```bash
+npm run build # For compile source files into dist folder
+npm run dev   # same
+
+npm run start # For autocompile source files into dist folder
+npm run watch # same
+
+npm run prod  # Build for production
+
+npm run doc   # create documentation css / js
+```
+
+# Add JS file
 1) Ajouter ton fichier JS dans l'une des catégories suivante :
 - src/js/<b>components</b>/ (btn, navbar, carrousel...)
 - src/js/<b>lib</b>/ (librairie ajouté)
@@ -30,11 +42,11 @@ npm run prod
 2) Import ton fichier JS dans le bon fichier main
 3) Si tu ajoute une page, Import ton js page dans ``app.js``
 
-## Add SCSS file
+# Add SCSS file
 1) Créer ton fichier SCSS dans le dossier source
 2) Import ton fichier SCSS dans main.scss
 
-## Add HTML file
+# Add HTML file
 1) Créer ton fichier PUG dans le dossier source/templates/pages
 2) Import ton fichier PUG dans ``webpack.common.js``
 ````js
@@ -69,6 +81,8 @@ new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: co
   - **[prod]** [Purify](https://github.com/webpack-contrib/purifycss-webpack) (Remove les class useless)
   - **[prod]** [Eslint](https://github.com/MoOx/eslint-loader) (Lint le JS)
   - **[prod]** [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) (Optimisation des images)
+  - **[prod]** [sassdoc](https://github.com/tcoopman/image-webpack-loader) (Optimisation des images)
+  - **[prod]** [jsdoc](https://github.com/tcoopman/image-webpack-loader) (Optimisation des images)
 
 
 # PROBLEM :

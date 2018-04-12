@@ -1,8 +1,17 @@
+////
+  /// @group Variables
+////
 /*------------------------------------*\
     $ COLORS
 \*------------------------------------*/
+/// @type Colors
+/// @name
   $primary   : #3bcf9a !default;
+/// @type Colors
+/// @name
   $secondary : #0b0726 !default;
+/// @type Colors
+/// @name
   $grey      : #e2e1e0 !default;
 
 /*------------------------------------*\
@@ -17,25 +26,40 @@
 /*------------------------------------*\
     $ FONTS
 \*------------------------------------*/
+/// @name
   $ff-body:     Helvetica, Roboto, 'Open Sans', Arial, sans-serif; 
+/// @name
     $fz-body:   16px; 
+/// @name
   $ff-title:    'Times New Roman', Times, serif;
+/// @name
     $fz-h1:     35px; 
+/// @name
     $fz-h2:     30px;
+/// @name
+    $fz-h3:     25px;
+/// @name
+    $fz-h4:     18px;
 /*------------------------------------*\
     $ PATHS
 \*------------------------------------*/
   $pathIMG : "../img/";
 
 /*------------------------------------*\
-    $ OTHER
+    $ LISTS
 \*------------------------------------*/
   $list-medias: large-desktop desktop tablet only-tablet mobile landscape print;
+  $list-color: ('primary', $primary), ('secondary', $secondary);
+  
 
 /*------------------------------------*\
     $ MEDIAS
 \*------------------------------------*/
+/// @name
   $mobile        : 575.99px; 
+/// @name
   $tablet        : 767.99px; 
+/// @name
   $desktop       : 991.99px; 
+/// @name
   $large-desktop : 1199.99px;

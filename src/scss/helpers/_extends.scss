@@ -1,56 +1,119 @@
+////
+  /// @group extends
+////
+
+
 /*------------------------------------*\
     $ OVERLAY
 \*------------------------------------*/
-%overlay:after {
-  content    : '';
-  width      : 100%;
-  height     : 100%;
-  display    : block;
-  background : rgba(0, 0, 0, 0.1);
-  position   : absolute;
-  top        : 0;
+/// @name
+///
+/// @example scss - Basic Usage SCSS
+///    @extend %overlay;
+///
+/// @example scss - CSS result
+///      content: '';
+///      width: 100%;
+///      height: 100%;
+///      display: block;
+///      background: rgba(0, 0, 0, 0.1);
+///      position: absolute;
+///      top: 0;
+%overlay {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
 }
 
 /*------------------------------------*\
     $ CENTER ABSOLUTE
 \*------------------------------------*/
 @each $center in 'x', 'y', 'xy' {
-  %center-absolute_#{$center}{
+/// @name center-absolute
+///
+/// @example scss - Basic Usage SCSS
+///    // Center X
+///    @extend %center-absolute_x;
+///
+///    // Center Y
+///    @extend %center-absolute_y;
+///
+///    // Center XY
+///    @extend %center-absolute_xy;
+///
+/// @example scss - CSS result
+///    // Center X
+///      position: absolute;
+///      left: 50%;
+///      transform: translate(-50%);
+///
+///    // Center Y
+///      position: absolute;
+///      top: 50%;
+///      transform: translate(-50%);
+///
+///    // Center XY
+///      position: absolute;
+///      top: 50%;
+///      left: 50%;
+///      transform: translate(-50%, -50%);
+  %center-absolute_#{$center} {
     @include center-absolute($center);
   }
 }
-/* - - - - - - - - - - - - - - - - -*\
-    @use :
-
-    @extend %center-absolute_x;
-    @extend %center-absolute_y;
-    @extend %center-absolute_xy;
-\* - - - - - - - - - - - - - - - - -*/
 
 /*------------------------------------*\
     $ CENTER FLEX
 \*------------------------------------*/
 @each $center in 'x', 'y', 'xy' {
-  %center-flex_#{$center}{
+/// @name center-flex
+///
+/// @example scss - Basic Usage SCSS
+///    // Center X
+///    @extend %center-flex_x;
+///
+///    // Center Y
+///    @extend %center-flex_y;
+///
+///    // Center XY
+///    @extend %center-flex_xy;
+///
+/// @example scss - CSS result
+///    // Center X
+///      display: flex;
+///      justify-content: center;
+///
+///    // Center Y
+///      display: flex;
+///      align-items: center;
+///
+///    // Center XY
+///      display: flex;
+///      align-items: center;
+///      justify-content: center;
+  %center-flex_#{$center} {
     @include center-flex($center);
   }
 }
-/* - - - - - - - - - - - - - - - - -*\
-    @use :
-
-    @extend %center-flex_x;
-    @extend %center-flex_y;
-    @extend %center-flex_xy;
-\* - - - - - - - - - - - - - - - - -*/
 
 /*------------------------------------*\
     $ CENTER BLOCK
 \*------------------------------------*/
+/// @name center-block
+///
+/// @example scss - Basic Usage SCSS
+///    // Center X
+///    @extend %center-block;
+///
+/// @example scss - CSS result
+///    // Center X
+///      display: block;
+///      margin-left: auto;
+///      margin-right: auto;
 %center-block {
   @include center-block;
 }
-/* - - - - - - - - - - - - - - - - -*\
-    @use :
-
-    @extend %center-block;
-\* - - - - - - - - - - - - - - - - -*/
