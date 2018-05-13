@@ -34,10 +34,10 @@ npm run doc   # create documentation css / js
 
 # Add JS file
 1) Ajouter ton fichier JS dans l'une des catégories suivante :
-- src/js/<b>components</b>/ (btn, navbar, carrousel...)
-- src/js/<b>lib</b>/ (librairie ajouté)
-- src/js/<b>pages</b>/ (JS uniquement sur des pages page spécifique)
-- src/js/<b>commun.js</b> (Pour toute les pages)
+- resources/assets/js/<b>components</b>/ (btn, navbar, carrousel...)
+- resources/assets/js/<b>lib</b>/ (librairie ajouté)
+- resources/assets/js/<b>pages</b>/ (JS uniquement sur des pages page spécifique)
+- resources/assets/js/<b>commun.js</b> (Pour toute les pages)
 
 2) Import ton fichier JS dans le bon fichier main
 3) Si tu ajoute une page, Import ton js page dans ``app.js``
@@ -105,7 +105,7 @@ ERROR in Error: Child compilation failed:
 (node:38604) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): TypeError: Cannot read property 'viewBox' of undefined
 (node:38604) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 ```
-> Vérifier si le code de toutes les icons est aux normes
+> Vérifier si le code de toutes les icons soit aux normes
 
 
 # TODO :

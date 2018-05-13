@@ -10,7 +10,6 @@ html(lang='fr')
     meta(name='description', content=documentDesc)
     title #{documentTitle}
 
-    link(rel='stylesheet', href=pathCss)
     block CSS
 
   body(class=bodyClass)
@@ -30,5 +29,4 @@ html(lang='fr')
         $ SCRIPTS
     //-———————————————————————————————————*\
     script(src='../node_modules/jquery/dist/jquery.min.js')
-    script(src=pathJs)
     block JS

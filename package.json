@@ -2,14 +2,14 @@
   "name": "starter-webpack-pug-jquery(es6)",
   "version": "1.0.0",
   "description": "",
-  "main": "src/js/app.js",
+  "main": "resources/assets/js/app.js",
   "scripts": {
     "build": "webpack --config webpack.dev.js",
     "dev": "npm run build",
-    "prod": "sassdoc ./src/scss/**/*.scss --dest doc/css && jsdoc ./src/js/**/*.js -d ./doc/js && webpack --config webpack.prod.js",
+    "prod": "sassdoc ./resources/assets/scss/**/*.scss --dest doc/css && jsdoc ./resources/assets/js/**/*.js -d ./doc/js && webpack --config webpack.prod.js",
     "start": "webpack --config webpack.dev.js --watch",
     "watch": "npm run start",
-    "doc": "jsdoc ./src/js/**/*.js -d ./doc/js"
+    "doc": "jsdoc ./resources/assets/js/**/*.js -d ./doc/js"
   },
   "author": "Vincent Battez",
   "license": "ISC",

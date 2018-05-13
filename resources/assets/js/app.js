@@ -6,7 +6,7 @@ import 'jquery';
 import './lib/unelib';
 
 /*———————————————————————————————————*\
-    $ LIBRAIRIES
+    $ PAGES
 \*———————————————————————————————————*/
 import Router from './util/Router';
 import common from './common';
@@ -29,8 +29,8 @@ const routes = new Router({
 /*———————————————————————————————————*\
         $ XHR ICONS
 \*———————————————————————————————————*/
-var __svg__  = { path: './../img/icons/**/*.svg', name: 'images/spriteXHR.svg' };
-__svg__      = { filename: 'dist/images/spriteXHR.svg'};
+var __svg__  = { path: './../images/icons/**/*.svg', name: 'images/spriteXHR.svg' };
+__svg__      = { filename: 'public/images/spriteXHR.svg'};
 
 require('webpack-svgstore-plugin/src/helpers/svgxhr')(__svg__);
 

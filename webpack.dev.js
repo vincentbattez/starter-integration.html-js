@@ -1,10 +1,10 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const merge              = require('webpack-merge');
+const common             = require('./webpack.common.js');
+const ExtractTextPlugin  = require("extract-text-webpack-plugin");
+const BrowserSyncPlugin  = require("browser-sync-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-const config = require("./compile.config");
+const config             = require("./compile.config");
 
 let devtool = (sourcemap) ? 'source-map' : ' ';
 module.exports = merge(common, {
@@ -71,7 +71,7 @@ module.exports = merge(common, {
         $ BrowserSyncPlugin
     \* - - - - - - - - - - - - */
     new BrowserSyncPlugin({
-      // go to http://localhost:3000/dist/homepage.html
+      // go to http://localhost:3000/public/homepage.html
       host: 'localhost',
       port: 3000,
       server: {

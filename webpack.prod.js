@@ -1,14 +1,14 @@
-const PurifyCSSPlugin = require('purifycss-webpack');
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const PurifyCSSPlugin   = require('purifycss-webpack');
+const merge             = require('webpack-merge');
+const common            = require('./webpack.common.js');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const glob = require('glob-all');
+const glob              = require('glob-all');
 
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin    = require('uglifyjs-webpack-plugin');
 
-const config = require("./compile.config");
+const config            = require("./compile.config");
 
 module.exports = merge(common, {
   module: {

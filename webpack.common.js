@@ -1,19 +1,19 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
-const path = require('path');
+const webpack           = require('webpack');
+const path              = require('path');
 
 
-var SvgStore = require('webpack-svgstore-plugin');
+var SvgStore            = require('webpack-svgstore-plugin');
 
-const config = require("./compile.config");
+const config            = require("./compile.config");
 
 module.exports = {
   /*———————————————————————————————————*\
       $ ENTRY
   \*———————————————————————————————————*/
   entry: [
-    'babel-polyfill',         // ES6
+    // 'babel-polyfill',         // ES6
     config.srcPathMain_JS,    // main JS
     config.srcPathMain_SCSS   // main CSS
   ],
@@ -22,7 +22,7 @@ module.exports = {
   \*———————————————————————————————————*/
   output: {
     path: config.distPath,       // name of dist folder
-    filename: config.bundle_JS   // name of bundle js
+    filename: config.distFolder_JS + config.bundle_JS   // name of bundle js
   },    
   resolve: {
     extensions: ['.js']
@@ -74,8 +74,8 @@ module.exports = {
         $ ExtractTextPlugin (scss)
     \* - - - - - - - - - - - - - - */
     new ExtractTextPlugin({
-      filename: config.bundle_CSS, // name of bundle css + css dist folder
-      // filename: config.distFolder_CSS + config.bundle_CSS, // name of bundle css + css dist folder
+      // filename: config.bundle_CSS, // name of bundle css + css dist folder
+      filename: config.distFolder_CSS + config.bundle_CSS, // name of bundle css + css dist folder
       allChunks: true
     }),
     /* - - - - - - - - - - - - - - *\

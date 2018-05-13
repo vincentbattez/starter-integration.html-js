@@ -122,6 +122,7 @@ $RECYCLE.BIN/
 
 yarn.lock
 dist/
+public/
 packages-lock.json
 package-lock\.json
 doc/
