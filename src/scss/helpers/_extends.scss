@@ -1,119 +1,91 @@
-////
-  /// @group extends
-////
-
-
-/*------------------------------------*\
+/*———————————————————————————————————*\
     $ OVERLAY
-\*------------------------------------*/
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @extend %overlay;
-///
-/// @example scss - CSS result
-///      content: '';
-///      width: 100%;
-///      height: 100%;
-///      display: block;
-///      background: rgba(0, 0, 0, 0.1);
-///      position: absolute;
-///      top: 0;
-%overlay {
-  content: '';
-  width: 100%;
-  height: 100%;
-  display: block;
-  background: rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 0;
+\*———————————————————————————————————*/
+%overlay:after {
+  content    : '';
+  width      : 100%;
+  height     : 100%;
+  display    : block;
+  background : rgba(0, 0, 0, 0.1);
+  position   : absolute;
+  top        : 0;
 }
 
-/*------------------------------------*\
+
+/*———————————————————————————————————*\
     $ CENTER ABSOLUTE
-\*------------------------------------*/
+\*———————————————————————————————————/*
+  Centre en position absolute
+
+  @use
+    @extend %a_x;
+    @extend %a_y;
+    @extend %a_xy;
+
+  @result
+  // a_x
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  // a_y
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  // a_xy
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+*/
 @each $center in 'x', 'y', 'xy' {
-/// @name center-absolute
-///
-/// @example scss - Basic Usage SCSS
-///    // Center X
-///    @extend %center-absolute_x;
-///
-///    // Center Y
-///    @extend %center-absolute_y;
-///
-///    // Center XY
-///    @extend %center-absolute_xy;
-///
-/// @example scss - CSS result
-///    // Center X
-///      position: absolute;
-///      left: 50%;
-///      transform: translate(-50%);
-///
-///    // Center Y
-///      position: absolute;
-///      top: 50%;
-///      transform: translate(-50%);
-///
-///    // Center XY
-///      position: absolute;
-///      top: 50%;
-///      left: 50%;
-///      transform: translate(-50%, -50%);
-  %center-absolute_#{$center} {
+  %a-#{$center}{
     @include center-absolute($center);
   }
 }
 
-/*------------------------------------*\
+
+/*———————————————————————————————————*\
     $ CENTER FLEX
-\*------------------------------------*/
+\*———————————————————————————————————/*
+  Centre en display flex
+
+  @use
+    @extend %f_x;
+    @extend %f_y;
+    @extend %f_xy;
+
+  @result
+  // f_x
+    display: flex;
+    justify-content: center;
+  // f_y
+    display: flex;
+    align-items: center;
+  // f_xy
+    display: flex;
+    align-items: center;
+    justify-content: center;
+*/
 @each $center in 'x', 'y', 'xy' {
-/// @name center-flex
-///
-/// @example scss - Basic Usage SCSS
-///    // Center X
-///    @extend %center-flex_x;
-///
-///    // Center Y
-///    @extend %center-flex_y;
-///
-///    // Center XY
-///    @extend %center-flex_xy;
-///
-/// @example scss - CSS result
-///    // Center X
-///      display: flex;
-///      justify-content: center;
-///
-///    // Center Y
-///      display: flex;
-///      align-items: center;
-///
-///    // Center XY
-///      display: flex;
-///      align-items: center;
-///      justify-content: center;
-  %center-flex_#{$center} {
+  %f-#{$center}{
     @include center-flex($center);
   }
 }
 
-/*------------------------------------*\
+
+/*———————————————————————————————————*\
     $ CENTER BLOCK
-\*------------------------------------*/
-/// @name center-block
-///
-/// @example scss - Basic Usage SCSS
-///    // Center X
-///    @extend %center-block;
-///
-/// @example scss - CSS result
-///    // Center X
-///      display: block;
-///      margin-left: auto;
-///      margin-right: auto;
-%center-block {
+\*———————————————————————————————————/*
+  Centre en display block
+
+  @use
+    @extend %b-x;
+
+  @result
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+*/
+%b-x {
   @include center-block;
 }

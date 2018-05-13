@@ -1,11 +1,11 @@
-//------------------------------------*\
+//-———————————————————————————————————*\
     $ element : icons
-//------------------------------------*/
+//-———————————————————————————————————*\
 mixin icon(icon_name, icon_description="")
   svg.icon(viewBox="0 0 100 100")&attributes(attributes)
     use(xlink:href='#icon-' + icon_name)
 
-//------------------------------------*\
+//-———————————————————————————————————*\
     $ icon
     //________  @VAR
       1: icon-name        : nom de l'icone (ex: 'menu')
@@ -16,4 +16,4 @@ mixin icon(icon_name, icon_description="")
 
     //________  @RETURN
       <span class="fa fa-menu" aria-label="Ouverture du menu"></span>
-//------------------------------------*\
+//-———————————————————————————————————*\

@@ -1,21 +1,18 @@
-////
-  /// @group Mixins
-////
-/*------------------------------------*\
-    $ MEDIAS QUERIES
-\*------------------------------------*/
-/// Code pour les grand écrans d'ordinateurs
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include large-desktop() {
-///       // Code for large-desktop device
-///    }
-///
-/// @example scss - CSS result
-///   @media screen and (min-width: 1199.99px) {
-///      // Code for large-desktop device
-///   }
+/*———————————————————————————————————*\
+    $ large-desktop
+\*———————————————————————————————————/*
+  Média pour les grand écrans d'ordinateurs
+
+  @use
+    @include large-desktop() {
+      // Code for large-desktop device
+    }
+     
+  @result
+    @media screen and (min-width: 1199.99px) {
+        // Code for large-desktop device
+    }
+*/
 @mixin large-desktop {
   @media screen and (min-width: #{$large-desktop}) {
     @content;
@@ -23,18 +20,21 @@
 }
 
 
-/// Code pour les écrans d'ordinateurs et +
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include desktop() {
-///       // Code for desktop device
-///    }
-///
-/// @example scss - CSS result
-///   @media screen and (min-width: 991.99px) {
-///      // Code for desktop device
-///   }
+/*———————————————————————————————————*\
+    $ desktop
+\*———————————————————————————————————/*
+  Média pour les écrans d'ordinateurs et +
+
+  @use
+    @include desktop() {
+       // Code for desktop device
+    }
+
+  @result
+    @media screen and (min-width: 991.99px) {
+        // Code for desktop device
+    }
+*/
 @mixin desktop {
   @media screen and (min-width: #{$desktop}) {
     @content;
@@ -42,18 +42,21 @@
 }
 
 
-/// Code uniquement pour les écrans de tablette
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include only-tablet() {
-///       // Code for only-tablet device
-///    }
-///
-/// @example scss - CSS result
-///   @media screen and (min-width: 575.99px) and (max-width: 767.99px) {
-///      // Code for only-tablet device
-///   }
+/*———————————————————————————————————*\
+    $ only-tablet
+\*———————————————————————————————————/*
+  Média uniquement pour les écrans de tablette
+
+  @use
+    @include only-tablet() {
+       // Code for only-tablet device
+    }
+
+  @result
+    @media screen and (min-width: 575.99px) and (max-width: 767.99px) {
+        // Code for only-tablet device
+    }
+*/
 @mixin only-tablet {
   @media screen and (min-width: #{$mobile}) and (max-width: #{$tablet}) {
     @content;
@@ -61,18 +64,21 @@
 }
 
 
-/// Code pour les écrans de tablette et -
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include tablet() {
-///       // Code for tablet device
-///    }
-///
-/// @example scss - CSS result
-///   @media screen and (max-width: 767.99px) {
-///      // Code for tablet device
-///   }
+/*———————————————————————————————————*\
+    $ tablet
+\*———————————————————————————————————/*
+  Média pour les écrans de tablette et -
+
+  @use
+    @include tablet() {
+       // Code for tablet device
+    }
+
+  @result
+    @media screen and (max-width: 767.99px) {
+        // Code for tablet device
+    }
+*/
 @mixin tablet {
   @media screen and (max-width: #{$tablet}) {
     @content;
@@ -80,18 +86,21 @@
 }
 
 
-/// Code uniquement pour les écrans mobile
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include mobile() {
-///       // Code for mobile device
-///    }
-///
-/// @example scss - CSS result
-///   @media screen and (max-width: 575.99px) {
-///      // Code for mobile device
-///   }
+/*———————————————————————————————————*\
+    $ mobile
+\*———————————————————————————————————/*
+  Média uniquement pour les écrans mobile
+
+  @use
+    @include mobile() {
+       // Code for mobile device
+    }
+
+  @result
+    @media screen and (max-width: 575.99px) {
+        // Code for mobile device
+    }
+*/
 @mixin mobile {
   @media screen and (max-width: #{$mobile}) {
     @content;
@@ -99,60 +108,72 @@
 }
 
 
-/// Code uniquement pour les écrans en format paysage
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include landscape() {
-///       // Code for landscape device
-///    }
-///
-/// @example scss - CSS result
-///   @media screen and (orientation: landscape) {
-///      // Code for landscape device
-///   }
+/*———————————————————————————————————*\
+    $ landscape
+\*———————————————————————————————————/*
+  Média uniquement pour les écrans en format paysage
+
+  @use
+    @include landscape() {
+       // Code for landscape device
+    }
+
+  @result
+    @media screen and (orientation: landscape) {
+        // Code for landscape device
+    }
+*/
 @mixin landscape {
   @media screen and (orientation: landscape) {
     @content;
   }
 }
 
+/*———————————————————————————————————*\
+    $ print
+\*———————————————————————————————————/*
+  Média uniquement pour l'impression
 
-/// Code uniquement pour l'impression
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include print() {
-///       // Code for printer
-///    }
-///
-/// @example scss - CSS result
-///   @media print {
-///      // Code for printer
-///   }
+  @use
+    @include print() {
+       // Code for printer
+    }
+
+  @result
+    @media print {
+        // Code for printer
+    }
+*/
 @mixin print {
   @media print {
     @content;
   }
 }
 
-/// Raccourcie de media query
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include media(max-width:350px) {
-///       // Code for your media max-width 350px device
-///    }
+/*———————————————————————————————————*\
+    $ TITLE
+\*———————————————————————————————————/*
+  Raccourcie de media query
+
+  @use
+    @include media(max-width:350px) {
+       // Code for your media max-width 350px device
+    }
+
+  @result
+    @media screen and (max-width: 350px) {
+       // Code for your media max-width 350px device
+    }
+*/
 @mixin media($media){
   @media screen and (#{$media}) {
     @content;
   }
 }
 
-
-/*__.---------------------------*\
-    $ CENTRER
-\*__.---------------------------*/
+/*———————————————————————————————————*\
+    $ center-absolute
+\*———————————————————————————————————*/
 @mixin center-absolute($xy) {
   position: absolute;
   
@@ -170,6 +191,9 @@
     transform: translate(-50%, -50%);
   }
 }
+/*———————————————————————————————————*\
+    $ center-flex
+\*———————————————————————————————————*/
 @mixin center-flex($xy) {
   display: flex;
 
@@ -184,31 +208,45 @@
     justify-content: center;
   }
 }
+/*———————————————————————————————————*\
+    $ center-block
+\*———————————————————————————————————*/
 @mixin center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/*__.---------------------------*\
-    $ FONT-SIZE
-\*__.---------------------------*/
-@function calculateRem($fz-body) {
+
+/*———————————————————————————————————*\
+    $ rem
+\*———————————————————————————————————/*
+  px to rem
+
+  @use
+    padding: rem(16px) rem(32px);
+
+  @result
+    padding: 1rem 2rem;
+*/
+@function rem($fz-body) {
   $remSize: $fz-body / 16px;
   @return  $remSize * 1rem;
 }
 
-/// font-size rem and fallback px
-/// @param {number} $size - Font size (px)
-/// @name
-///
-/// @example scss - Basic Usage SCSS
-///    @include font-size(16px);
-///
-/// @example scss - CSS result
-///    font-size: 16px;
-///    font-size: 1rem;
+/*———————————————————————————————————*\
+    $ font-size
+\*———————————————————————————————————/*
+  Font-size rem and fallback px
+
+  @use
+    @include font-size(16px);
+
+  @result
+    font-size: 16px;
+    font-size: 1rem;
+*/
 @mixin font-size($size) {
   font-size: $size;
-  font-size: calculateRem($size);
+  font-size: rem($size);
 }
