@@ -9,7 +9,7 @@
     }
      
   @result
-    @media screen and (min-width: 1199.99px) {
+    @media screen and (min-width: 1200px) {
         // Code for large-desktop device
     }
 */
@@ -23,7 +23,7 @@
 /*———————————————————————————————————*\
     $ desktop
 \*———————————————————————————————————/*
-  Média pour les écrans d'ordinateurs et +
+  Média pour les écrans d'ordinateurs et -
 
   @use
     @include desktop() {
@@ -31,12 +31,12 @@
     }
 
   @result
-    @media screen and (min-width: 991.99px) {
+    @media screen and (min-width: 1200px) {
         // Code for desktop device
     }
 */
 @mixin desktop {
-  @media screen and (min-width: #{$desktop}) {
+  @media screen and (max-width: #{$large-desktop}) {
     @content;
   }
 }
@@ -53,12 +53,12 @@
     }
 
   @result
-    @media screen and (min-width: 575.99px) and (max-width: 767.99px) {
+    @media screen and (min-width: 767px) and (max-width: 1024px) {
         // Code for only-tablet device
     }
 */
 @mixin only-tablet {
-  @media screen and (min-width: #{$mobile}) and (max-width: #{$tablet}) {
+  @media screen and (min-width: #{$tablet}) and (max-width: #{$desktop}) {
     @content;
   }
 }
@@ -75,16 +75,15 @@
     }
 
   @result
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: 1024px) {
         // Code for tablet device
     }
 */
 @mixin tablet {
-  @media screen and (max-width: #{$tablet}) {
+  @media screen and (max-width: #{$desktop}) {
     @content;
   }
 }
-
 
 /*———————————————————————————————————*\
     $ mobile
@@ -97,11 +96,33 @@
     }
 
   @result
-    @media screen and (max-width: 575.99px) {
+    @media screen and (max-width: 768px) {
         // Code for mobile device
     }
 */
 @mixin mobile {
+  @media screen and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+
+/*———————————————————————————————————*\
+    $ small-mobile
+\*———————————————————————————————————/*
+  Média uniquement pour les écrans small-mobile
+
+  @use
+    @include small-mobile() {
+       // Code for small-mobile device
+    }
+
+  @result
+    @media screen and (max-width: 400px) {
+        // Code for small-mobile device
+    }
+*/
+@mixin small-mobile {
   @media screen and (max-width: #{$mobile}) {
     @content;
   }

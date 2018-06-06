@@ -6,9 +6,9 @@
   width      : 100%;
   height     : 100%;
   display    : block;
-  background : rgba(0, 0, 0, 0.1);
   position   : absolute;
   top        : 0;
+  background : rgba(0, 0, 0, 0.1);
 }
 
 
@@ -24,17 +24,17 @@
 
   @result
   // a_x
-    position: absolute;
-    left: 50%;
+    position:  absolute;
+    left:      50%;
     transform: translate(-50%);
   // a_y
-    position: absolute;
-    top: 50%;
+    position:  absolute;
+    top:       50%;
     transform: translateY(-50%);
   // a_xy
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position:  absolute;
+    top:       50%;
+    left:      50%;
     transform: translate(-50%, -50%);
 */
 @each $center in 'x', 'y', 'xy' {
@@ -56,14 +56,14 @@
 
   @result
   // f_x
-    display: flex;
+    display:         flex;
     justify-content: center;
   // f_y
-    display: flex;
+    display:     flex;
     align-items: center;
   // f_xy
-    display: flex;
-    align-items: center;
+    display:         flex;
+    align-items:     center;
     justify-content: center;
 */
 @each $center in 'x', 'y', 'xy' {
@@ -82,8 +82,8 @@
     @extend %b-x;
 
   @result
-    display: block;
-    margin-left: auto;
+    display:      block;
+    margin-left:  auto;
     margin-right: auto;
 */
 %b-x {

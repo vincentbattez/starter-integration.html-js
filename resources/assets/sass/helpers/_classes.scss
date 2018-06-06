@@ -1,20 +1,11 @@
-////
-  /// @group utils classes
-////
-
-
 /*———————————————————————————————————*\
     $ UTILS CLASSES
 \*———————————————————————————————————*/
 @each $name, $color in $list-color {
-
-/// @name .bg-primary
-/// @name .bg-secondary
   .bg-#{$name} {
     background-color: $color;
   }
-
-/// @name .color-primary
+  
   .color-#{$name} {
       color: $color;
   }

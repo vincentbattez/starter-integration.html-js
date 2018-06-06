@@ -9,12 +9,13 @@
 \*———————————————————————————————————*//*
   C'est pour que webpack compile les médias dans l'ordre ci-dessous
 */
-@include large-desktop  {.mqpacker{width: initial;}} 
-@include desktop        {.mqpacker{width: initial;}} 
-@include tablet         {.mqpacker{width: initial;}} 
-@include only-tablet    {.mqpacker{width: initial;}} 
-@include mobile         {.mqpacker{width: initial;}} 
-@include landscape      {.mqpacker{width: initial;}} 
+@include large-desktop  {.mqpacker{width: initial;}}
+@include desktop        {.mqpacker{width: initial;}}
+@include tablet         {.mqpacker{width: initial;}}
+@include only-tablet    {.mqpacker{width: initial;}}
+@include mobile         {.mqpacker{width: initial;}}
+@include small-mobile   {.mqpacker{width: initial;}}
+@include landscape      {.mqpacker{width: initial;}}
 @include print          {.mqpacker{width: initial;}}
 
 /*———————————————————————————————————*\

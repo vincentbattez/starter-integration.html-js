@@ -11,7 +11,7 @@
     "webpack.*.js": true,
     ".gitignore": true,
     "compile.config": true,
-    "public": true,
+    // "public": true,
   },
     "eslint.options": {
         "configFile": "./.eslintrc.json"

@@ -1,8 +1,3 @@
-////
-  /// @group typography
-////
-
-
 /*———————————————————————————————————*\
     $ TYPOGRAPHY
 \*———————————————————————————————————*/
@@ -21,30 +16,18 @@ a {
   font-family : $ff-title;
 }
 
-/// @name .h1
-/// @require $fz-h1
-/// @see $fz-h1
 .h1, h1{
   @include font-size($fz-h1);
 }
 
-/// @name .h2
-/// @require $fz-h2
-/// @see $fz-h2
 .h2, h2{
   @include font-size($fz-h2);
 }
 
-/// @name .h3
-/// @require $fz-h3
-/// @see $fz-h3
 .h3, h3{
   @include font-size($fz-h3);
 }
 
-/// @name .h4
-/// @require $fz-h4
-/// @see $fz-h4
 .h4, h4{
   @include font-size($fz-h4);
 }
