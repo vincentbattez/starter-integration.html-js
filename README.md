@@ -33,14 +33,57 @@ npm run doc   # create documentation css / js
 ```
 
 # Add JS file
-1) Ajouter ton fichier JS dans l'une des catégories suivante :
+**1) Ajouter ton fichier JS dans l'une des catégories suivante :**
 - resources/assets/js/<b>components</b>/ (btn, navbar, carrousel...)
-- resources/assets/js/<b>lib</b>/ (librairie ajouté)
 - resources/assets/js/<b>pages</b>/ (JS uniquement sur des pages page spécifique)
 - resources/assets/js/<b>commun.js</b> (Pour toute les pages)
 
-2) Import ton fichier JS dans le bon fichier main
-3) Si tu ajoute une page, Import ton js page dans ``app.js``
+**2.1) JS d'une page :**
+```js
+// dans le dossier : pages/TAPAGE.js
+/*———————————————————————————————————*\
+    $ TAPAGE
+\*———————————————————————————————————*//*
+  @required: <body id="page-TAPAGE">
+
+*/
+export default function(){
+  if ($('#page-TAPAGE').length > 0) {
+    console.log('TAPAGE.js');
+  }
+}
+```
+```js
+// dans le dossier : ./app.js
+import TAPAGE from './pages/TAPAGE';
+
+jQuery(document).ready(function () {
+  ...
+  TAPAGE()
+  ...
+});
+```
+
+**2.2) JS d'un composant**
+```js
+// dans le dossier : components/TONCOMPOSANT.js
+/*———————————————————————————————————*\
+    $ TONCOMPOSANT
+\*———————————————————————————————————*/
+export function taFonction() {
+  // Code de la fonction
+  console.log('components/TONCOMPOSANT.js->taFonction()');
+}
+```
+```js
+// dans le dossier que tu le souhaite
+/*———————————————————————————————————*\
+  $ IMPORTS
+\*———————————————————————————————————*/
+import * as TONCOMPOSANT from './components/TONCOMPOSANT';
+
+TONCOMPOSANT.taFonction();
+```
 
 # Add SCSS file
 1) Créer ton fichier SCSS dans le dossier source
@@ -50,16 +93,14 @@ npm run doc   # create documentation css / js
 1) Créer ton fichier PUG dans le dossier source/templates/pages
 2) Import ton fichier PUG dans ``webpack.common.js``
 ````js
-/*
-  plugins: [
-    // IMPORTS ALL HTML FILES
-    ...
-*/
-new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: config.srcPath_HTML + '/homepage.pug' }),
+plugins: [
+  // IMPORTS ALL HTML FILES
+  new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: config.srcPath_HTML + '/homepage.pug' }),
+]
 ````
 
 # Technos :
-- HTML
+- HTML (PUG)
 - SCSS
 - JS
   - Jquery 3.2.1
@@ -85,7 +126,10 @@ new HtmlWebpackPlugin({ filename: config.distPath+'/homepage.html', template: co
   - **[prod]** [jsdoc](https://github.com/tcoopman/image-webpack-loader) (Optimisation des images)
 
 
-# PROBLEM :
+# Configuration :
+La compilation est configurable dans le fichier : `/compile.config`
+
+# Problèmes :
 **problem 1**
 ````bash
 ERROR in Error: Child compilation failed:
@@ -97,7 +141,7 @@ ERROR in Error: Child compilation failed:
 
 **problem 2**
 <br>`problème quelconque`
-> Supprimer package.lock.json
+> Supprimer package.lock.json & node_modules puis npm install
 
 **problem 3**
 ```
@@ -105,7 +149,7 @@ ERROR in Error: Child compilation failed:
 (node:38604) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): TypeError: Cannot read property 'viewBox' of undefined
 (node:38604) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 ```
-> Vérifier si le code de toutes les icons soit aux normes
+> Vérifier si le code de toutes les icons soit aux normes svg
 
 
 # TODO :

@@ -8,9 +8,10 @@
     "package-lock.json": true,
     ".eslintrc.json": true,
     
-    "webpack.*.js": true,
+    "webpack.prod.js": true,
+    "webpack.dev.js": true,
     ".gitignore": true,
-    "compile.config": true,
+    // "compile.config": true,
     // "public": true,
   },
     "eslint.options": {
