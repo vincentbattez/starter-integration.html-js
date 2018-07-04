@@ -4,6 +4,7 @@
 ```bash
 npm i
 npm run start
+# http://localhost:3000/public/homepage.html
 # CODE !
 ```
 ## Development
