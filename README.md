@@ -9,9 +9,9 @@ npm run start
 ```
 ## Development
 ```bash
-# For autocompile source files
+# For autocompile
 npm run start
-# OR For compile 
+# For compile 
 npm run build
 ```
 ## Production
@@ -31,6 +31,7 @@ npm run watch # same
 npm run prod  # Build for production
 
 npm run doc   # create documentation css / js
+npm run open:dev # Open homepage.html
 ```
 
 # Add JS file
@@ -123,8 +124,8 @@ plugins: [
   - **[prod]** [Purify](https://github.com/webpack-contrib/purifycss-webpack) (Remove les class useless)
   - **[prod]** [Eslint](https://github.com/MoOx/eslint-loader) (Lint le JS)
   - **[prod]** [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) (Optimisation des images)
-  - **[prod]** [sassdoc](https://github.com/tcoopman/image-webpack-loader) (Optimisation des images)
   - **[prod]** [jsdoc](https://github.com/tcoopman/image-webpack-loader) (Optimisation des images)
+  - **[prod]** [opener](https://github.com/domenic/opener) (Ouvre un fichier / url avec webpack et ligne de commande)
 
 
 # Configuration :

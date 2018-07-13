@@ -1,15 +1,20 @@
 {
   "name": "starter-webpack-pug-jquery(es6)",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "resources/assets/js/app.js",
   "scripts": {
-    "build": "webpack --config webpack.dev.js",
-    "dev": "npm run build",
-    "prod": "sassdoc ./resources/assets/scss/**/*.scss --dest doc/css && jsdoc ./resources/assets/js/**/*.js -d ./doc/js && webpack --config webpack.prod.js",
-    "start": "webpack --config webpack.dev.js --watch",
-    "watch": "npm run start",
-    "doc": "jsdoc ./resources/assets/js/**/*.js -d ./doc/js"
+    "build":    "webpack --config webpack.dev.js",
+    "dev":      "npm run build",
+    
+    "prod":     "jsdoc ./resources/assets/js/**/*.js -d ./doc/js && webpack --config webpack.prod.js",
+    
+    "open:dev": "opener http://localhost:3000/public/homepage.html",
+
+    "start":    "open:dev && webpack --config webpack.dev.js --watch",
+    "watch":    "npm run start",
+
+    "doc":      "jsdoc ./resources/assets/js/**/*.js -d ./doc/js"
   },
   "author": "Vincent Battez",
   "license": "ISC",
@@ -32,6 +37,7 @@
     "image-webpack-loader": "^3.4.2",
     "jsdoc": "^3.5.5",
     "node-sass": "^4.7.2",
+    "opener": "^1.4.3",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.9",
     "pug": "^2.0.0-rc.4",
@@ -52,7 +58,7 @@
   },
   "browserslist": [
     "last 2 versions",
-    "ie >= 9",
+    "ie >= 10",
     "ios >= 8"
   ]
 }
